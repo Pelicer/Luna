@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Luna</title>
+    <link rel="stylesheet" type="text/css" href="/style/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/style/css/landing.css">
+</head>
+
+<body>
+    <section class="container-fluid" id="landingpage">
+        <div class="row">
+            <div id="promo" class="col-lg-9">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12"></div>
+                        <h1>Luna <span> - Controle financeiro ao seu alcance</span></h1>
+                        <div class="col-lg-12 mobile">
+                            <img src="style/content/landing/mobile.png">
+                        </div>
+                        <div class="col-lg-12 mobile">
+                            <img src="style/content/landing/target.png">
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div id="login" class="col-lg-3">
+                <img class="logo" src="favicon.ico"/>
+                <h2>Luna</h2>
+
+                <form>
+                    <div class="form-group user-data">
+                        <!--Email elements-->
+                        <label for="user">E-Mail: </label>
+                        <label id="email-tooltip">Este e-mail não é válido</label>
+                        <br>
+                        <img id="email-checked" isvisible="False" class="input-icon" src="style/content/icon/checked.png">
+                        <input onfocusout="CheckEmail(this)" id="user" type="email" class="form-control" placeholder="seuemail@provedor.com">
+                        
+                        <!--Password elements-->
+                        <label for="password">Senha: </label>
+                        <br>
+                        <img onClick="ShowPassword(this)" isvisible="False" class="input-icon" src="style/content/icon/view_on.png">
+                        <input name="password" id="password" type="password" class="form-control">
+                    </div>
+
+                    <div class="actions">
+                        <a>Registrar-se</a>
+                        <br>
+                        <a>Esqueci minha senha</a>
+                    </div>
+                </form>
+
+                <h6>Outras opções de login:</h6>
+
+                <div class="login-apis">
+                    <button class="btn btn-primary"><img src="style/content/icon/white/google.png" />Login com
+                        Google</button>
+                    <button class="btn btn-primary"><img src="style/content/icon/white/facebook.png" />Login com
+                        Facebook</button>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/landing.js"></script>
+
+</html>
