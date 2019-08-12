@@ -22,6 +22,26 @@
     src: url(../content/fonts/roboto/Roboto-Bold.ttf);
 }
 
+
+#password-info{
+    text-align: center;
+}
+
+#informative{
+    text-align: center;
+    font-family: roboto-regular;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+#strength{
+    background-color: rgb(68, 136, 61);
+    width: 0px;
+    margin: 50px 0px 5px;
+    z-index: 999;
+    height: 10px;;
+}
+
 #landingpage{
     height: 100%;
 }
@@ -66,9 +86,21 @@
     text-align: left;
 }
 
+#login-btn{
+    background-color: rgb(134, 175, 73) !important;
+    border: none;
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+#login-btn:hover{
+    background-color: rgb(68, 136, 61) !important;
+}
+
 .input-icon {
-    width: 5%;
-    padding: 5px 0;
+    width: 4%;
+    padding: 10px 0;
     right: 13%;
     position: absolute;
     cursor: pointer;
@@ -95,6 +127,16 @@
 #login .actions{
     display: block;
     text-align: right;
+    margin-bottom: 20px;
+}
+
+#login .actions a{
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#login .actions a:hover{
+    color: rgb(134, 175, 73);
 }
 
 #login h6{

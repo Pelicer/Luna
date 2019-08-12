@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/style/css/landing.css">
 </head>
 
-<body>
+<body id="content">
     <section class="container-fluid" id="landingpage">
         <div class="row">
             <div id="promo" class="col-lg-9">
@@ -26,7 +26,7 @@
                 </div>
             </div>
             <div id="login" class="col-lg-3">
-                <img class="logo" src="favicon.ico"/>
+                <img class="logo" src="favicon.ico" />
                 <h2>Luna</h2>
 
                 <form>
@@ -35,18 +35,23 @@
                         <label for="user">E-Mail: </label>
                         <label id="email-tooltip">Este e-mail não é válido</label>
                         <br>
-                        <img id="email-checked" isvisible="False" class="input-icon" src="style/content/icon/checked.png">
-                        <input onfocusout="CheckEmail(this)" id="user" type="email" class="form-control" placeholder="seuemail@provedor.com">
-                        
+                        <img id="email-checked" isvisible="False" class="input-icon"
+                            src="style/content/icon/checked.png">
+                        <input onfocusout="CheckEmail(this)" id="user" type="email" class="form-control"
+                            placeholder="seuemail@provedor.com">
+
                         <!--Password elements-->
                         <label for="password">Senha: </label>
                         <br>
-                        <img onClick="ShowPassword(this)" isvisible="False" class="input-icon" src="style/content/icon/view_on.png">
+                        <img onClick="ShowPassword(this)" isvisible="False" class="input-icon"
+                            src="style/content/icon/view_on.png">
                         <input name="password" id="password" type="password" class="form-control">
                     </div>
 
+                    <button id="login-btn" class="btn btn-primary">Login</button>
+
                     <div class="actions">
-                        <a>Registrar-se</a>
+                        <a onClick="LoadRegistrationPage()">Registrar-se</a>
                         <br>
                         <a>Esqueci minha senha</a>
                     </div>
