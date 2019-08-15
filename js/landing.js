@@ -27,19 +27,28 @@ function CheckEmail(Email) {
     }
 }
 
-function LoadRegistrationPage() {
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", "registration.html", true);
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState = 4) {
-            if (xhr.status == 200) {
-                var body = document.getElementById("content");
-                body.innerHTML = xhr.responseText;
-            }
-        }
-    }
-    xhr.send();
-}
+// function LoadRegistrationPage() {
+//     var xhr = new XMLHttpRequest();
+//     xhr.open("GET", "registration.html", true);
+//     xhr.onreadystatechange = function () {
+//         if (xhr.readyState = 4) {
+//             if (xhr.status == 200) {
+//                 var body = document.getElementById("content");
+//                 body.innerHTML = xhr.responseText;
+//             }
+//         }
+//     }
+//     xhr.send();
+// }
+function renderButton() {
+    gapi.signin2.render('my-signin2', {
+      'scope': 'profile email',
+      'width': 240,
+      'height': 50,
+      'longtitle': true,
+      'theme': 'dark'
+    });
+  }
 
 function CheckPasswordStrenth(e) {
     var pass = e.value;

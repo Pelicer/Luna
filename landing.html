@@ -2,30 +2,47 @@
 
 <head>
     <meta charset="ISO-8859-1">
+    <!-- <meta name="google-signin-client_id"
+        content="Y606001564194-gpmhtckgq0v9mg52vlivcn3sae3hbo0f.apps.googleusercontent.com"> -->
     <title>Luna</title>
     <link rel="stylesheet" type="text/css" href="/style/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/style/css/landing.css">
 </head>
 
+
 <body id="content">
+    <!--API's integration-->
+    <!-- <script>
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '1078372615705539',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v4.0'
+            });
+        };
+    </script>
+    <script async defer src="https://connect.facebook.net/en_US/sdk.js"></script> -->
+
     <section class="container-fluid" id="landingpage">
         <div class="row">
-            <div id="promo" class="col-lg-9">
+            <div id="promo" class="col-lg-8">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-12"></div>
-                        <h1>Luna <span> - Controle financeiro ao seu alcance</span></h1>
-                        <div class="col-lg-12 mobile">
+                        <div class="col-lg-12">
+                            <h1>Luna <span> - Controle financeiro ao seu alcance</span></h1>
+                        </div>
+                        <!-- <div class="col-lg-12 mobile">
                             <img src="style/content/landing/mobile.png">
                         </div>
                         <div class="col-lg-12 mobile">
                             <img src="style/content/landing/target.png">
-                        </div>
+                        </div> -->
 
                     </div>
                 </div>
             </div>
-            <div id="login" class="col-lg-3">
+            <div id="login" class="col-lg-4">
                 <img class="logo" src="favicon.ico" />
                 <h2>Luna</h2>
 
@@ -51,7 +68,7 @@
                     <button id="login-btn" class="btn btn-primary">Login</button>
 
                     <div class="actions">
-                        <a onClick="LoadRegistrationPage()">Registrar-se</a>
+                        <a href="registration.html">Registrar-se</a>
                         <br>
                         <a>Esqueci minha senha</a>
                     </div>
@@ -64,11 +81,20 @@
                         Google</button>
                     <button class="btn btn-primary"><img src="style/content/icon/white/facebook.png" />Login com
                         Facebook</button>
+                    <!-- <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                    <div class="fb-login-button" data-width="" data-size="large" data-button-type="login_with"
+                        data-auto-logout-link="false" data-use-continue-as="false"></div> -->
                 </div>
             </div>
         </div>
     </section>
+
+    <footer>
+        <span>Pelicer ® 2019</span>
+    </footer>
 </body>
+
+<!-- <script src="https://apis.google.com/js/platform.js?onload=renderButton" async defer></script> -->
 
 <script src="js/bootstrap/bootstrap.min.js"></script>
 <script src="js/landing.js"></script>
