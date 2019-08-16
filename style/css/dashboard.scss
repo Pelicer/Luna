@@ -1,0 +1,104 @@
+@import "variables.scss";
+
+header {
+  font-family: roboto-thin;
+  .navbar {
+    background-color: $SilverBLue;
+    width: 100%;
+    top: 0;
+    position: fixed;
+    ul {
+      text-decoration: none;
+      width: 100%;
+      text-align: right;
+      margin: 0;
+      li {
+        display: inline;
+        color: white;
+        cursor: pointer;
+        &:nth-of-type(2) {
+          margin-left: 30px;
+          margin-right: 10px;
+        }
+        img{
+          width: 16px;
+          height: 16px;
+          margin-right: 10px;
+          margin-bottom: 5px;
+        }
+      }
+    }
+  }
+}
+
+.leftmenu {
+  font-family: roboto-regular;
+  height: 100%;
+  background-color: $GoblinBlue;
+  position: fixed;
+  padding: 50px 10px;
+  .bug {
+    margin-top: 3px;
+  }
+  .icon {
+    width: 50px;
+    height: 50px;
+    display: block;
+    padding: 12px;
+    border-radius: 100%;
+    background-color: $SilverBLue;
+    margin-top: 30px;
+    cursor: pointer;
+    img {
+      width: 100%;
+    }
+    &:nth-of-type(1) {
+      margin: 0;
+    }
+    &:nth-of-type(4) {
+      position: fixed;
+      margin-bottom: 50px;
+      margin-top: 5px;
+      bottom: 0;
+    }
+    &:hover {
+      background-color: $Greenery;
+    }
+    .tooltiptext {
+      visibility: hidden;
+      width: 170px;
+      background-color: #555;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 3px 0;
+      position: absolute;
+      z-index: 1;
+      left: 100%;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+      margin-top: -25px;
+      font-size: 14px;
+    }
+
+    .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 30%;
+      right: 100%;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid #555;
+    }
+    #bugtip{
+      margin-left: 10px;
+    }
+    &:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  .active {
+    background-color: $Greenery;
+  }
+}

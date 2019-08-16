@@ -1,220 +1,253 @@
 @font-face {
-    font-family: roboto-regular;
-    src: url(../content/fonts/roboto/Roboto-Regular.ttf);
-}
-@font-face {
-    font-family: roboto-thin;
-    src: url(../content/fonts/roboto/Roboto-Thin.ttf);
+  font-family: roboto-regular;
+  src: url(../content/fonts/roboto/Roboto-Regular.ttf);
 }
 
 @font-face {
-    font-family: roboto-black;
-    src: url(../content/fonts/roboto/Roboto-Black.ttf);
+  font-family: roboto-thin;
+  src: url(../content/fonts/roboto/Roboto-Thin.ttf);
 }
 
 @font-face {
-    font-family: roboto-light;
-    src: url(../content/fonts/roboto/Roboto-Light.ttf);
+  font-family: roboto-black;
+  src: url(../content/fonts/roboto/Roboto-Black.ttf);
 }
 
 @font-face {
-    font-family: roboto-bold;
-    src: url(../content/fonts/roboto/Roboto-Bold.ttf);
+  font-family: roboto-light;
+  src: url(../content/fonts/roboto/Roboto-Light.ttf);
 }
 
-
-#password-info{
-    text-align: center;
+@font-face {
+  font-family: roboto-bold;
+  src: url(../content/fonts/roboto/Roboto-Bold.ttf);
 }
 
-#informative{
-    text-align: center;
-    font-family: roboto-regular;
-    font-weight: 800;
-    text-transform: uppercase;
-    font-size: 14px;
-}
-#strength{
-    background-color: rgb(68, 136, 61);
-    width: 0px;
-    margin: 50px 0px 5px;
-    z-index: 999;
-    height: 10px;;
+#password-info {
+  text-align: center;
 }
 
-#landingpage{
-    height: 100%;
+#informative {
+  text-align: center;
+  font-family: roboto-regular;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
-#landingpage .row{
-    height: 100%;
+#strength {
+  background-color: #44883d;
+  width: 0px;
+  margin: 50px 0px 5px;
+  z-index: 999;
+  height: 10px;
 }
 
-#promo{
-    color: white;
-    display: flex;
-    font-family: roboto-light;
-    padding: 50px 120px;
-    height: 100%;
-    background-image: url(../content/backgrounds/background.png);
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+#landingpage {
+  height: 100%;
 }
 
-#promo  img{
-    display: block;
-    margin: auto;
-    width: 70%;
+#landingpage .row {
+  height: 100%;
 }
 
-#promo h1{
-    margin-top: 10%;
+#promo {
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: roboto-light;
+  padding: 50px 120px;
+  height: 100%;
+  background: #86af49 url(../content/backgrounds/background.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-#login{
-    background-color: white;
-    padding: 40px;
-    position: fixed;
-    right: 0;
+#promo .summary {
+  margin-top: 30%;
+  text-align: center;
 }
 
-#login .logo{
-    display: block;
-    margin: auto;
-    width: 100px;
-    margin-bottom: 10px;
+#promo h1 {
+  margin-top: 10%;
+  font-size: 62px;
 }
 
-#login h2{
-    font-family: roboto-regular;
-    text-align: center;
+#promo h3 {
+  font-size: 38px;
 }
 
-#login .user-data{
-    text-align: left;
+#promo button {
+  margin-top: 10px;
+  padding: 10 40px;
+  border: solid 2px white;
+  background-color: transparent;
+  color: white;
+  font-family: roboto-thin;
+  border-radius: 50px;
 }
 
-#login-btn{
-    background-color: rgb(134, 175, 73) !important;
-    border: none;
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 20px;
+#promo button:hover {
+  background-color: white;
+  color: black;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
-#login-btn:hover{
-    background-color: rgb(68, 136, 61) !important;
+#promo img {
+  display: block;
+  margin: auto;
+  width: 70%;
 }
 
-.input-icon {
-    width: 4%;
-    padding: 10px 0;
-    right: 13%;
-    position: absolute;
-    cursor: pointer;
-}
-#email-checked{
-    display: none;
+#login {
+  background-color: white;
+  padding: 40px;
+  position: fixed;
+  right: 0;
 }
 
-#email-tooltip{
-    display: none;
-    font-family: roboto-black;
-    font-size: 12px;
-    text-transform: uppercase;
-    color: red;
-    display: no;
+#login .logo {
+  display: block;
+  margin: auto;
+  width: 100px;
+  margin-bottom: 10px;
 }
 
-#password {
-    width: 100%;
-    float: left;
-    margin-right: 5px;
+#login h2 {
+  font-family: roboto-regular;
+  text-align: center;
 }
 
-#login .actions{
-    display: block;
-    text-align: right;
-    margin-bottom: 20px;
+#login .user-data {
+  text-align: left;
 }
 
-#login .actions a{
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+#login #login-btn {
+  background-color: #86af49 !important;
+  border: none;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
-#login .actions a:hover{
-    color: rgb(134, 175, 73);
+#login #login-btn:hover {
+  background-color: #44883d !important;
 }
 
-#login h6{
-    text-align: left;
+#login .input-icon {
+  width: 4%;
+  padding: 10px 0;
+  right: 13%;
+  position: absolute;
+  cursor: pointer;
 }
 
-#login .login-apis .btn{
-    text-align: left;
-    font-size: 16px;
-    font-family: roboto-regular;
-    width: 100%;
-    height: 50px;
-    border: none;
-    margin-bottom: 10px;
-    color: white;
+#login #email-checked {
+  display: none;
 }
 
-#login .login-apis .btn:nth-of-type(1){
-    background-color: #e33d2b;
-}
-#login .login-apis .btn:nth-of-type(2){
-    background-color: #1f4478;
-}
-
-#login .login-apis .btn img{
-    width: 25px;
-    height: 25px;
-    margin: 0 15px 0 0;
+#login #email-tooltip {
+  display: none;
+  font-family: roboto-black;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: red;
+  display: no;
 }
 
-footer{
-    position: absolute;
-    margin: -40px 20px;
-    font-family: roboto-thin;
-    color: #EEEEEE;
+#login #password {
+  width: 100%;
+  float: left;
+  margin-right: 5px;
 }
 
+#login .actions {
+  display: block;
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+#login .actions a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#login .actions a:hover {
+  color: #86af49;
+}
+
+#login h6 {
+  text-align: left;
+}
+
+#login .login-apis .btn {
+  text-align: left;
+  font-size: 16px;
+  font-family: roboto-regular;
+  width: 100%;
+  height: 50px;
+  border: none;
+  margin-bottom: 10px;
+  color: white;
+}
+
+#login .login-apis .btn:nth-of-type(1) {
+  background-color: #e33d2b;
+}
+
+#login .login-apis .btn:nth-of-type(2) {
+  background-color: #1f4478;
+}
+
+#login .login-apis .btn img {
+  width: 25px;
+  height: 25px;
+  margin: 0 15px 0 0;
+}
+
+footer {
+  position: absolute;
+  margin: -40px 20px;
+  font-family: roboto-thin;
+  color: #eeeeee;
+}
 
 @media screen and (max-width: 1200px) {
-	.input-icon {
-		width: 5%;
-		right: 21%;
-	}
+  .input-icon {
+    width: 5%;
+    right: 21%;
+  }
+  #promo h1 {
+    font-size: 38px;
+  }
+  #promo h3 {
+    font-size: 18px;
+  }
 }
 
 @media screen and (max-width: 991.99px) {
-	.input-icon {
-		width: 2%;
-		right: 15%;
-    }
-    
-	#promo{
-		display: none;
-	}
-	#login{
-		padding: 100px;
-    }
-    footer{
-        font-family: roboto-regular;
-        color: black;
-    }
+  .input-icon {
+    width: 2%;
+    right: 15%;
+  }
+  #login {
+    padding: 50px 100px;
+  }
+  footer {
+    font-family: roboto-regular;
+    color: black;
+  }
 }
 
 @media screen and (max-width: 768px) {
-	.input-icon {
-		width: 3%;
-		right: 22%;
-    }
-	
+  .input-icon {
+    width: 3%;
+    right: 22%;
+  }
 }
+/*# sourceMappingURL=landing.css.map */

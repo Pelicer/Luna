@@ -1,0 +1,143 @@
+@font-face {
+  font-family: roboto-regular;
+  src: url(../content/fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-thin;
+  src: url(../content/fonts/roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: roboto-black;
+  src: url(../content/fonts/roboto/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url(../content/fonts/roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: roboto-bold;
+  src: url(../content/fonts/roboto/Roboto-Bold.ttf);
+}
+
+header {
+  font-family: roboto-thin;
+}
+
+header .navbar {
+  background-color: #8a9a9a;
+  width: 100%;
+  top: 0;
+  position: fixed;
+}
+
+header .navbar ul {
+  text-decoration: none;
+  width: 100%;
+  text-align: right;
+  margin: 0;
+}
+
+header .navbar ul li {
+  display: inline;
+  color: white;
+  cursor: pointer;
+}
+
+header .navbar ul li:nth-of-type(2) {
+  margin-left: 30px;
+  margin-right: 10px;
+}
+
+header .navbar ul li img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+.leftmenu {
+  font-family: roboto-regular;
+  height: 100%;
+  background-color: #5f7278;
+  position: fixed;
+  padding: 50px 10px;
+}
+
+.leftmenu .bug {
+  margin-top: 3px;
+}
+
+.leftmenu .icon {
+  width: 50px;
+  height: 50px;
+  display: block;
+  padding: 12px;
+  border-radius: 100%;
+  background-color: #8a9a9a;
+  margin-top: 30px;
+  cursor: pointer;
+}
+
+.leftmenu .icon img {
+  width: 100%;
+}
+
+.leftmenu .icon:nth-of-type(1) {
+  margin: 0;
+}
+
+.leftmenu .icon:nth-of-type(4) {
+  position: fixed;
+  margin-bottom: 50px;
+  margin-top: 5px;
+  bottom: 0;
+}
+
+.leftmenu .icon:hover {
+  background-color: #86af49;
+}
+
+.leftmenu .icon .tooltiptext {
+  visibility: hidden;
+  width: 170px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 3px 0;
+  position: absolute;
+  z-index: 1;
+  left: 100%;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  margin-top: -25px;
+  font-size: 14px;
+}
+
+.leftmenu .icon .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 30%;
+  right: 100%;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #555;
+}
+
+.leftmenu .icon #bugtip {
+  margin-left: 10px;
+}
+
+.leftmenu .icon:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.leftmenu .active {
+  background-color: #86af49;
+}
+/*# sourceMappingURL=dashboard.css.map */
