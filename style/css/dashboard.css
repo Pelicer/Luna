@@ -25,6 +25,7 @@
 
 header {
   font-family: roboto-thin;
+  margin-bottom: 100px;
 }
 
 header .navbar {
@@ -33,6 +34,7 @@ header .navbar {
   top: 0;
   position: fixed;
   padding: 10px 40px;
+  z-index: 98;
 }
 
 header .navbar ul {
@@ -67,6 +69,8 @@ header .navbar ul li img {
   background-color: #5f7278;
   position: fixed;
   padding: 120px 20px;
+  top: 0;
+  z-index: 99;
 }
 
 .leftmenu .logo {
@@ -153,5 +157,108 @@ header .navbar ul li img {
   width: 100%;
   margin: 0;
   text-align: center;
+}
+
+.content {
+  font-family: roboto-regular;
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+.content .title {
+  text-align: left;
+}
+
+.content .title h2 {
+  font-family: roboto-bold;
+  color: #5f7278;
+}
+
+.content #maingoal {
+  width: 100%;
+}
+
+.content .mainsummary {
+  width: 100%;
+  margin: 0;
+}
+
+.content .mainsummary h3 span {
+  font-family: roboto-black;
+  color: #86af49;
+}
+
+.content .mainsummary div {
+  margin: 5px;
+  height: 100%;
+  background-color: #eeeeee;
+  width: 48%;
+  padding: 20px;
+  float: left;
+}
+
+.content .mainsummary div:nth-of-type(1) {
+  margin-left: 0;
+}
+
+.content .mainsummary div p:nth-of-type(1) {
+  font-size: 28px;
+  font-family: roboto-black;
+}
+
+.content .mainsummary div p:nth-of-type(1) img {
+  float: left;
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+.content .mainsummary div p:nth-of-type(1) .description {
+  font-family: roboto-thin;
+}
+
+.content .divider {
+  margin: 20px 0;
+}
+
+.content .divider hr {
+  background-color: #eeeeee;
+  width: 100%;
+  height: 1px;
+}
+
+.content .metas h3 {
+  text-align: left;
+  font-family: roboto-bold;
+  color: #5f7278;
+}
+
+.content .metas .meta {
+  text-align: center;
+  padding: 20px;
+}
+
+.content .metas .meta .wrapper {
+  padding: 20px;
+  background-color: #eeeeee;
+}
+
+.content .metas .meta .wrapper img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  left: 0;
+  margin-left: 35px;
+}
+
+.content .metas .meta .wrapper p {
+  font-family: roboto-black;
+  width: 100%;
+  font-size: 22px;
+}
+
+.content .metas .meta .wrapper .graph {
+  text-align: center;
+  height: 250px;
 }
 /*# sourceMappingURL=dashboard.css.map */
