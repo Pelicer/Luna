@@ -10,19 +10,32 @@ header {
     position: fixed;
     padding: 10px 40px;
     z-index: 98;
-    ul {
+    ul:nth-of-type(1) {
       text-decoration: none;
       width: 100%;
       text-align: right;
       margin: 0;
       height: 20px;
+      padding: 0 0 0 5px;
       li {
         display: inline;
         color: white;
         cursor: pointer;
-        &:nth-of-type(2) {
+
+        &:nth-of-type(3) {
           margin-left: 40px;
           margin-right: 10px;
+        }        
+        &:nth-of-type(1){
+          display: none;
+          float: left;
+          img{
+            width: 25px;
+            height: 25px;
+          }
+          @media screen and (max-width: 768px) {
+            display: block;
+          }
         }
         img {
           width: 16px;
@@ -31,6 +44,40 @@ header {
           margin-bottom: 5px;
         }
       }
+    }
+    ul:nth-of-type(2) {
+      padding: 0;
+      text-decoration: none;
+      text-align: left;
+      width: 100%;
+      height: 0;
+      display: none;
+      margin: 0;
+      transition: height 2s;
+      li {
+        width: 100%;
+        list-style: none;
+        text-decoration: none;
+        color: white;
+        margin-right: 10px;
+        padding: 10px 10px 10px 5px;
+        cursor: pointer;
+        img {
+          width: 16px;
+          height: 16px;
+          margin-right: 10px;
+          margin-bottom: 5px;
+        }
+        &:nth-of-type(1){
+          padding: 0;
+        }
+        &:hover{
+          background-color: $Greenery;
+        }        
+      }
+      .active {
+        background-color: $Greenery;
+      }    
     }
   }
 }
@@ -117,6 +164,9 @@ header {
     width: 100%;
     margin: 0;
     text-align: center;
+  }
+  @media screen and (max-width: 768px) {
+    display: none;
   }
 }
 
@@ -206,5 +256,32 @@ header {
         }
       }
     }
+    .objetivo {
+      text-align: center;
+      padding: 20px;
+      .wrapper {
+        padding: 20px;
+        background-color: #eeeeee;
+        img {
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          left: 0;
+          margin-left: 35px;
+        }
+        p {
+          font-family: roboto-black;
+          width: 100%;
+          font-size: 22px;
+        }
+        .graph {
+          text-align: center;
+          height: 250px;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 768px) {
+    margin-left: 5%;
   }
 }

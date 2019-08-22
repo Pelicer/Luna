@@ -45,11 +45,42 @@ Highcharts.chart('maingoal', {
 
 function Activate(e) {
     var leftMenuIcons = document.getElementsByClassName("icon");
+    var hamburguerMenuItems = document.getElementsByClassName("menuitem");
     e.classList.add("active");
     for (let i = 0; i < leftMenuIcons.length; i++) {
         if (leftMenuIcons[i] !== e) {
             leftMenuIcons[i].classList.remove("active");
         }
+    }
+    for (let i = 0; i < hamburguerMenuItems.length; i++) {
+        if (hamburguerMenuItems[i] !== e) {
+            hamburguerMenuItems[i].classList.remove("active");
+        }
+    }
+}
+
+function WatchSize(WindowSize) {
+    if (WindowSize.matches) {
+        var items = document.getElementById("hamburguermenu");
+        items.style.display = "none";
+        items.style.height = "0";
+    }
+}
+
+var WindowSize = window.matchMedia("(min-width: 768px)")
+WatchSize(WindowSize)
+WindowSize.addListener(WatchSize)
+
+function ShowMenu(icon) {
+    var items = document.getElementById("hamburguermenu");
+    if (icon.getAttribute("collapsed") == 1) {
+        items.style.display = "block";
+        items.style.height = "auto";
+        icon.setAttribute("collapsed", 0);
+    } else {
+        items.style.display = "none";
+        items.style.height = "0";
+        icon.setAttribute("collapsed", 1);
     }
 }
 
@@ -102,5 +133,59 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-
+    var objectives = document.getElementsByClassName("objective");
+    for (let i = 0; i < objectives.length; i++) {
+        Highcharts.chart(objectives[i].getAttribute("id"), {
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: 0,
+                plotShadow: false,
+                backgroundColor: "transparent"
+            },
+            title: {
+                style: {
+                    color: 'white'
+                },
+                text: '68%',
+                align: 'center',
+                verticalAlign: 'middle',
+                y: 40
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    dataLabels: {
+                        enabled: true,
+                        distance: -50,
+                        style: {
+                            fontWeight: 'bold',
+                            color: 'white'
+                        }
+                    },
+                    colors: colors,
+                    startAngle: -90,
+                    endAngle: 90,
+                    center: ['50%', '75%'],
+                    size: '110%'
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Quantidade',
+                innerSize: '50%',
+                data: [
+                    ['', 58.9],
+                    ['', 13.29]
+                ]
+            }],
+            exporting: {
+                enabled: false
+            },
+            credits: {
+                enabled: false
+            }
+        });
+    }
 })
