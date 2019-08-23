@@ -23,236 +23,34 @@
   src: url(../content/fonts/roboto/Roboto-Bold.ttf);
 }
 
-header {
-  font-family: roboto-thin;
-  margin-bottom: 100px;
-}
-
-header .navbar {
-  background-color: #8a9a9a;
-  width: 100%;
-  top: 0;
-  position: fixed;
-  padding: 10px 40px;
-  z-index: 98;
-}
-
-header .navbar ul:nth-of-type(1) {
-  text-decoration: none;
-  width: 100%;
-  text-align: right;
-  margin: 0;
-  height: 20px;
-  padding: 0 0 0 5px;
-}
-
-header .navbar ul:nth-of-type(1) li {
-  display: inline;
-  color: white;
-  cursor: pointer;
-}
-
-header .navbar ul:nth-of-type(1) li:nth-of-type(3) {
-  margin-left: 40px;
-  margin-right: 10px;
-}
-
-header .navbar ul:nth-of-type(1) li:nth-of-type(1) {
-  display: none;
-  float: left;
-}
-
-header .navbar ul:nth-of-type(1) li:nth-of-type(1) img {
-  width: 25px;
-  height: 25px;
-}
-
-@media screen and (max-width: 768px) {
-  header .navbar ul:nth-of-type(1) li:nth-of-type(1) {
-    display: block;
-  }
-}
-
-header .navbar ul:nth-of-type(1) li img {
-  width: 16px;
-  height: 16px;
-  margin-right: 10px;
-  margin-bottom: 5px;
-}
-
-header .navbar ul:nth-of-type(2) {
-  padding: 0;
-  text-decoration: none;
-  text-align: left;
-  width: 100%;
-  height: 0;
-  display: none;
-  margin: 0;
-  -webkit-transition: height 2s;
-  transition: height 2s;
-}
-
-header .navbar ul:nth-of-type(2) li {
-  width: 100%;
-  list-style: none;
-  text-decoration: none;
-  color: white;
-  margin-right: 10px;
-  padding: 10px 10px 10px 5px;
-  cursor: pointer;
-}
-
-header .navbar ul:nth-of-type(2) li img {
-  width: 16px;
-  height: 16px;
-  margin-right: 10px;
-  margin-bottom: 5px;
-}
-
-header .navbar ul:nth-of-type(2) li:nth-of-type(1) {
-  padding: 0;
-}
-
-header .navbar ul:nth-of-type(2) li:hover {
-  background-color: #86af49;
-}
-
-header .navbar ul:nth-of-type(2) .active {
-  background-color: #86af49;
-}
-
-.leftmenu {
+.wrapper {
   font-family: roboto-regular;
-  height: 100%;
-  background-color: #5f7278;
-  position: fixed;
-  padding: 120px 20px;
-  top: 0;
-  z-index: 99;
 }
 
-.leftmenu .logo {
-  position: absolute;
-  top: 0;
-  background-color: white;
-  border-radius: 100%;
-  padding: 10px;
-  width: 50px;
-  margin-top: 40px;
-}
-
-.leftmenu .icon {
-  width: 50px;
-  height: 50px;
-  display: block;
-  padding: 12px;
-  border-radius: 100%;
-  background-color: #8a9a9a;
-  margin-top: 30px;
-  cursor: pointer;
-}
-
-.leftmenu .icon img {
-  width: 100%;
-}
-
-.leftmenu .icon:nth-of-type(1) {
-  margin: 5px 0 0 0;
-}
-
-.leftmenu .icon:nth-of-type(4) {
-  position: fixed;
-  margin-bottom: 40px;
-  bottom: 0;
-}
-
-.leftmenu .icon:hover {
-  background-color: #86af49;
-}
-
-.leftmenu .icon .tooltiptext {
-  visibility: hidden;
-  width: 170px;
-  background-color: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 3px 0;
-  position: absolute;
-  z-index: 1;
-  left: 100%;
-  -webkit-transition: opacity 0.3s;
-  transition: opacity 0.3s;
-  margin-top: -25px;
-  font-size: 14px;
-}
-
-.leftmenu .icon .tooltiptext::after {
-  content: "";
-  position: absolute;
-  top: 30%;
-  right: 100%;
-  border-top: 5px solid transparent;
-  border-bottom: 5px solid transparent;
-  border-right: 5px solid #555;
-}
-
-.leftmenu .icon #bugtip {
-  margin-left: 10px;
-}
-
-.leftmenu .icon:hover .tooltiptext {
-  visibility: visible;
-  opacity: 1;
-}
-
-.leftmenu .active {
-  background-color: #86af49;
-}
-
-.leftmenu label {
-  color: white;
-  width: 100%;
-  margin: 0;
-  text-align: center;
-}
-
-@media screen and (max-width: 768px) {
-  .leftmenu {
-    display: none;
-  }
-}
-
-.content {
-  font-family: roboto-regular;
-  margin-left: 10%;
-  margin-right: 5%;
-}
-
-.content .title {
+.wrapper .title {
   text-align: left;
 }
 
-.content .title h2 {
+.wrapper .title h2 {
   font-family: roboto-bold;
   color: #5f7278;
 }
 
-.content #maingoal {
+.wrapper #maingoal {
   width: 100%;
 }
 
-.content .mainsummary {
+.wrapper .mainsummary {
   width: 100%;
   margin: 0;
 }
 
-.content .mainsummary h3 span {
+.wrapper .mainsummary h3 span {
   font-family: roboto-black;
   color: #86af49;
 }
 
-.content .mainsummary div {
+.wrapper .mainsummary div {
   margin: 5px;
   height: 100%;
   background-color: #eeeeee;
@@ -261,53 +59,53 @@ header .navbar ul:nth-of-type(2) .active {
   float: left;
 }
 
-.content .mainsummary div:nth-of-type(1) {
+.wrapper .mainsummary div:nth-of-type(1) {
   margin-left: 0;
 }
 
-.content .mainsummary div p:nth-of-type(1) {
+.wrapper .mainsummary div p:nth-of-type(1) {
   font-size: 28px;
   font-family: roboto-black;
 }
 
-.content .mainsummary div p:nth-of-type(1) img {
+.wrapper .mainsummary div p:nth-of-type(1) img {
   float: left;
   margin-right: 20px;
   width: 40px;
   height: 40px;
 }
 
-.content .mainsummary div p:nth-of-type(1) .description {
+.wrapper .mainsummary div p:nth-of-type(1) .description {
   font-family: roboto-thin;
 }
 
-.content .divider {
+.wrapper .divider {
   margin: 20px 0;
 }
 
-.content .divider hr {
+.wrapper .divider hr {
   background-color: #eeeeee;
   width: 100%;
   height: 1px;
 }
 
-.content .metas h3 {
+.wrapper .metas h3 {
   text-align: left;
   font-family: roboto-bold;
   color: #5f7278;
 }
 
-.content .metas .meta {
+.wrapper .metas .meta {
   text-align: center;
   padding: 20px;
 }
 
-.content .metas .meta .wrapper {
+.wrapper .metas .meta .holder {
   padding: 20px;
   background-color: #eeeeee;
 }
 
-.content .metas .meta .wrapper img {
+.wrapper .metas .meta .holder img {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -315,28 +113,33 @@ header .navbar ul:nth-of-type(2) .active {
   margin-left: 35px;
 }
 
-.content .metas .meta .wrapper p {
+.wrapper .metas .meta .holder p {
   font-family: roboto-black;
   width: 100%;
   font-size: 22px;
 }
 
-.content .metas .meta .wrapper .graph {
+.wrapper .metas .meta .holder .graph {
   text-align: center;
   height: 250px;
 }
 
-.content .metas .objetivo {
+.wrapper .metas .meta .holder:hover {
+  background-color: rgba(134, 175, 73, 0.3);
+  cursor: pointer;
+}
+
+.wrapper .metas .objetivo {
   text-align: center;
   padding: 20px;
 }
 
-.content .metas .objetivo .wrapper {
+.wrapper .metas .objetivo .holder {
   padding: 20px;
   background-color: #eeeeee;
 }
 
-.content .metas .objetivo .wrapper img {
+.wrapper .metas .objetivo .holder img {
   position: absolute;
   width: 30px;
   height: 30px;
@@ -344,20 +147,103 @@ header .navbar ul:nth-of-type(2) .active {
   margin-left: 35px;
 }
 
-.content .metas .objetivo .wrapper p {
+.wrapper .metas .objetivo .holder p {
   font-family: roboto-black;
   width: 100%;
   font-size: 22px;
 }
 
-.content .metas .objetivo .wrapper .graph {
+.wrapper .metas .objetivo .holder .graph {
   text-align: center;
   height: 250px;
 }
 
-@media screen and (max-width: 768px) {
-  .content {
-    margin-left: 5%;
-  }
+.wrapper #DetailsModal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  /* Modal Content */
+}
+
+.wrapper #DetailsModal .ModalContent {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 50px;
+  border: 1px solid #888;
+  width: 80%;
+  /* The Close Button */
+}
+
+.wrapper #DetailsModal .ModalContent .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.wrapper #DetailsModal .ModalContent .close:hover,
+.wrapper #DetailsModal .ModalContent .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.wrapper #DetailsModal .ModalContent h1 {
+  font-family: roboto-bold;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.wrapper #DetailsModal .ModalContent table {
+  text-align: center;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.wrapper #DetailsModal .ModalContent table th {
+  font-family: roboto-thin;
+  font-size: 22px;
+}
+
+.wrapper #DetailsModal .ModalContent table td {
+  font-family: roboto-regular;
+  font-size: 42px;
+}
+
+.wrapper #DetailsModal .ModalContent .data {
+  width: 100%;
+  text-align: center;
+}
+
+.wrapper #DetailsModal .ModalContent .data .progresschart {
+  width: 35%;
+  float: left;
+  margin: 0;
+}
+
+.wrapper #DetailsModal .ModalContent .data .history {
+  width: 35%;
+  margin: 0;
+  float: right;
+}
+
+.wrapper #DetailsModal .ModalContent .data .history h3 {
+  font-family: roboto-black;
+  font-size: 18px;
 }
 /*# sourceMappingURL=dashboard.css.map */

@@ -1,168 +1,138 @@
-<html>
+<link rel="stylesheet" type="text/css" href="/style/css/dashboard.css">
 
-<head>
-    <meta charset="ISO-8859-1">
-    <title>Luna</title>
-    <link rel="stylesheet" type="text/css" href="/style/css/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="/style/css/dashboard.css">
-</head>
-
-<body>
-
-    <header>
-        <div class="navbar">
-            <ul>
-                <li collapsed="1" onClick="ShowMenu(this);"><img src="style/content/icon/hamburguer.png"></li>
-                <li><img src="style/content/icon/user.png">Pelicer</li>
-                <li><img src="style/content/icon/exit.png">Sair</li>
-            </ul>
-            <ul id="hamburguermenu">
-                <li>
-                    <hr />
-                </li>
-                <li onClick="Activate(this)" class="menuitem"><img src="style/content/icon/home_white.png">Home</li>
-                <li onClick="Activate(this)" class="menuitem"><img src="style/content/icon/bullseye_white.png">Metas</li>
-                <li onClick="Activate(this)" class="menuitem"><img src="style/content/icon/settings_white.png">Config</li>
-                <li onClick="Activate(this)" class="menuitem"><img src="style/content/icon/bug.png">Report Bugs</li>
-            </ul>
-        </div>
-    </header>
-
-    <section class="leftmenu">
-        <img class="logo" src="style/content/logo.png">
-        <div onClick="Activate(this)" class="icon active"><img alt="Tela principal"
-                src="style/content/icon/home_white.png">
-            <span class="tooltiptext">Página Principal</span>
-        </div>
-        <label>Home</label>
-        <div onClick="Activate(this)" class="icon" alt="Metas e objetivos"><img
-                src="style/content/icon/bullseye_white.png">
-            <span class="tooltiptext">Metas e objetivos</span></div>
-        <label>Metas</label>
-        <div onClick="Activate(this)" class="icon" alt="Configurações de conta"><img
-                src="style/content/icon/settings_white.png">
-            <span class="tooltiptext">Configurações da conta</span></div>
-        <label>Config</label>
-        <div onClick="Activate(this)" class="icon" alt="Reportar um bug"><img class="bug"
-                src="style/content/icon/bug.png">
-            <span id="bugtip" class="tooltiptext">Reportar um bug</span></div>
-    </section>
-
-    <section class="content">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12 title">
-                    <h2>Objetivo Principal</h2>
+<div class="container-fluid wrapper" onLoad="alert('bosta')">
+    <!--Details modal-->
+    <div id="DetailsModal" class="modal">
+        <div class="ModalContent">
+            <span class="close" onClick="CloseModal()">&times;</span>
+            <h1>Farmácia</h1>
+            <h2>Resumo</h2>
+            <table>
+                <tbody>
+                    <tr>
+                        <th>Objetivo Final</th>
+                        <th>Poupado Atual</th>
+                        <th>Falta</th>
+                    </tr>
+                    <tr>
+                        <td>R$ 2.000,00</td>
+                        <td>R$ 1.500,00</td>
+                        <td>R$ 500,00</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="data">
+                <div class="progresschart">
+                    <h1>teste</h1>
                 </div>
-                <div class="col-xs-6 col-lg-6 col-md-12">
-                    <div id="maingoal"></div>
-                </div>
-                <div class="col-xs-6 col-lg-6 col-md-12">
-                    <div class="mainsummary">
-                        <h3>Data Final: <span>2025</span></h3>
-                        <div class="achieved">
-                            <p>
-                                <img src="style/content/icon/piggy.png">R$ 192.000</p>
-                            <p id="description">Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem
-                                impsum Lorem impsum</p>
-                        </div>
-                        <div class="remaining">
-                            <p>
-                                <img src="style/content/icon/remaining.png">R$ 108.000</p>
-                            <p id="description">Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem
-                                impsum Lorem impsum</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12 divider">
-                    <hr />
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12 metas">
-                    <h3>Metas</h3>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-12 meta">
-                            <div class="wrapper">
-                                <p>Farmácia</p>
-                                <div id="farmacia" class="graph"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 meta">
-                            <div class="wrapper">
-                                <p>Transporte</p>
-                                <div id="transporte" class="graph"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 meta">
-                            <div class="wrapper">
-                                <p>Comida</p>
-                                <div id="comida" class="graph"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 meta">
-                            <div class="wrapper">
-                                <p>Lazer</p>
-                                <div id="lazer" class="graph"></div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12 divider">
-                    <hr />
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-12 metas">
-                    <h3>Objetivos</h3>
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
-                            <div class="wrapper">
-                                <p>Notebook</p>
-                                <div id="notebook" class="objective"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
-                            <div class="wrapper">
-                                <p>Viagem - RJ</p>
-                                <div id="viagemrj" class="objective"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
-                            <div class="wrapper">
-                                <p>Carro Novo</p>
-                                <div id="carronovo" class="objective"></div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
-                            <div class="wrapper">
-                                <p>Casamento</p>
-                                <div id="casamento" class="objective"></div>
-                            </div>
-                        </div>
-
-                    </div>
+                <div class="history">
+                    <h1>Histórico</h1>
                 </div>
             </div>
         </div>
+    </div>
 
-    </section>
+    <div class="row">
+        <div class="col-lg-12 title">
+            <h2>Objetivo Principal</h2>
+        </div>
+        <div class="col-xs-6 col-lg-6 col-md-12">
+            <div id="maingoal"></div>
+        </div>
+        <div class="col-xs-6 col-lg-6 col-md-12">
+            <div class="mainsummary">
+                <h3>Data Final: <span>2025</span></h3>
+                <div class="achieved">
+                    <p>
+                        <img src="style/content/icon/piggy.png">R$ 192.000</p>
+                    <p id="description">Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem
+                        impsum Lorem impsum</p>
+                </div>
+                <div class="remaining">
+                    <p>
+                        <img src="style/content/icon/remaining.png">R$ 108.000</p>
+                    <p id="description">Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem
+                        impsum Lorem impsum</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</body>
+    <div class="row">
+        <div class="col-lg-12 divider">
+            <hr />
+        </div>
+    </div>
 
-<script src="https://code.highcharts.com/highcharts.js"></script>
-<script src="https://code.highcharts.com/modules/exporting.js"></script>
-<script src="https://code.highcharts.com/modules/export-data.js"></script>
-<script src="js/bootstrap/bootstrap.min.js"></script>
+    <div class="row">
+        <div class="col-lg-12 metas">
+            <h3>Metas</h3>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 meta">
+                    <div onClick="ShowDetailModal(this)" class="holder">
+                        <p>Farmácia</p>
+                        <div id="farmacia" class="graph"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 meta">
+                    <div onClick="ShowDetailModal(this)" class="holder">
+                        <p>Transporte</p>
+                        <div id="transporte" class="graph"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 meta">
+                    <div onClick="ShowDetailModal(this)" class="holder">
+                        <p>Comida</p>
+                        <div id="comida" class="graph"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 meta">
+                    <div onClick="ShowDetailModal(this)" class="holder">
+                        <p>Lazer</p>
+                        <div id="lazer" class="graph"></div>
+                    </div>
+                </div>
 
-<script src="js/dashboard.js"></script>
-</html>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 divider">
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 metas">
+            <h3>Objetivos</h3>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
+                    <div class="holder">
+                        <p>Notebook</p>
+                        <div id="notebook" class="objective"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
+                    <div class="holder">
+                        <p>Viagem - RJ</p>
+                        <div id="viagemrj" class="objective"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
+                    <div class="holder">
+                        <p>Carro Novo</p>
+                        <div id="carronovo" class="objective"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
+                    <div class="holder">
+                        <p>Casamento</p>
+                        <div id="casamento" class="objective"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

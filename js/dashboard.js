@@ -3,88 +3,58 @@ colors.push('rgb(95, 114, 120)');
 colors.push('rgb(134, 175, 73)');
 colors.push('rgb(138, 154, 154)');
 
-Highcharts.chart('maingoal', {
-    chart: {
-        type: 'bar'
-    },
-    colors: colors,
-    title: {
-        text: ''
-    },
-    xAxis: {
-        categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
-    },
-    yAxis: {
-        min: 0,
+function ShowDetailModal(Element) {
+    var modal = document.getElementById("DetailsModal");
+    modal.style.display = "block";
+}
+
+function CloseModal() {
+    var modal = document.getElementById("DetailsModal");
+    modal.style.display = "none";
+}
+
+var wrapper = document.getElementById("wrapper");
+function LoadGraphs() {
+    Highcharts.chart('maingoal', {
+        chart: {
+            type: 'bar'
+        },
+        colors: colors,
         title: {
             text: ''
-        }
-    },
-    credits: {
-        enabled: false
-    },
-    legend: {
-        reversed: true
-    },
-    plotOptions: {
-        series: {
-            stacking: 'normal'
-        }
-    },
-    series: [{
-        name: 'John',
-        data: [5, 3, 4, 7, 2]
-    }, {
-        name: 'Jane',
-        data: [2, 2, 3, 2, 1]
-    }, {
-        name: 'Joe',
-        data: [3, 4, 4, 2, 5]
-    }]
-});
+        },
+        xAxis: {
+            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: ''
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        legend: {
+            reversed: true
+        },
+        plotOptions: {
+            series: {
+                stacking: 'normal'
+            }
+        },
+        series: [{
+            name: 'John',
+            data: [5, 3, 4, 7, 2]
+        }, {
+            name: 'Jane',
+            data: [2, 2, 3, 2, 1]
+        }, {
+            name: 'Joe',
+            data: [3, 4, 4, 2, 5]
+        }]
+    });
 
-function Activate(e) {
-    var leftMenuIcons = document.getElementsByClassName("icon");
-    var hamburguerMenuItems = document.getElementsByClassName("menuitem");
-    e.classList.add("active");
-    for (let i = 0; i < leftMenuIcons.length; i++) {
-        if (leftMenuIcons[i] !== e) {
-            leftMenuIcons[i].classList.remove("active");
-        }
-    }
-    for (let i = 0; i < hamburguerMenuItems.length; i++) {
-        if (hamburguerMenuItems[i] !== e) {
-            hamburguerMenuItems[i].classList.remove("active");
-        }
-    }
-}
-
-function WatchSize(WindowSize) {
-    if (WindowSize.matches) {
-        var items = document.getElementById("hamburguermenu");
-        items.style.display = "none";
-        items.style.height = "0";
-    }
-}
-
-var WindowSize = window.matchMedia("(min-width: 768px)")
-WatchSize(WindowSize)
-WindowSize.addListener(WatchSize)
-
-function ShowMenu(icon) {
-    var items = document.getElementById("hamburguermenu");
-    if (icon.getAttribute("collapsed") == 1) {
-        items.style.display = "block";
-        items.style.height = "auto";
-        icon.setAttribute("collapsed", 0);
-    } else {
-        items.style.display = "none";
-        items.style.height = "0";
-        icon.setAttribute("collapsed", 1);
-    }
-}
-
-document.addEventListener("DOMContentLoaded", function () {
     var graphs = document.getElementsByClassName("graph");
     for (let i = 0; i < graphs.length; i++) {
         // Build the chart
@@ -188,4 +158,4 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     }
-})
+};

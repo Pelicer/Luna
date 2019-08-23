@@ -1,179 +1,7 @@
 @import "variables.scss";
 
-header {
-  font-family: roboto-thin;
-  margin-bottom: 100px;
-  .navbar {
-    background-color: $SilverBLue;
-    width: 100%;
-    top: 0;
-    position: fixed;
-    padding: 10px 40px;
-    z-index: 98;
-    ul:nth-of-type(1) {
-      text-decoration: none;
-      width: 100%;
-      text-align: right;
-      margin: 0;
-      height: 20px;
-      padding: 0 0 0 5px;
-      li {
-        display: inline;
-        color: white;
-        cursor: pointer;
-
-        &:nth-of-type(3) {
-          margin-left: 40px;
-          margin-right: 10px;
-        }        
-        &:nth-of-type(1){
-          display: none;
-          float: left;
-          img{
-            width: 25px;
-            height: 25px;
-          }
-          @media screen and (max-width: 768px) {
-            display: block;
-          }
-        }
-        img {
-          width: 16px;
-          height: 16px;
-          margin-right: 10px;
-          margin-bottom: 5px;
-        }
-      }
-    }
-    ul:nth-of-type(2) {
-      padding: 0;
-      text-decoration: none;
-      text-align: left;
-      width: 100%;
-      height: 0;
-      display: none;
-      margin: 0;
-      transition: height 2s;
-      li {
-        width: 100%;
-        list-style: none;
-        text-decoration: none;
-        color: white;
-        margin-right: 10px;
-        padding: 10px 10px 10px 5px;
-        cursor: pointer;
-        img {
-          width: 16px;
-          height: 16px;
-          margin-right: 10px;
-          margin-bottom: 5px;
-        }
-        &:nth-of-type(1){
-          padding: 0;
-        }
-        &:hover{
-          background-color: $Greenery;
-        }        
-      }
-      .active {
-        background-color: $Greenery;
-      }    
-    }
-  }
-}
-
-.leftmenu {
+.wrapper {
   font-family: roboto-regular;
-  height: 100%;
-  background-color: $GoblinBlue;
-  position: fixed;
-  padding: 120px 20px;
-  top: 0;
-  z-index: 99;
-  .logo {
-    position: absolute;
-    top: 0;
-    background-color: white;
-    border-radius: 100%;
-    padding: 10px;
-    width: 50px;
-    margin-top: 40px;
-  }
-  .icon {
-    width: 50px;
-    height: 50px;
-    display: block;
-    padding: 12px;
-    border-radius: 100%;
-    background-color: $SilverBLue;
-    margin-top: 30px;
-    cursor: pointer;
-    img {
-      width: 100%;
-    }
-    &:nth-of-type(1) {
-      margin: 5px 0 0 0;
-    }
-    &:nth-of-type(4) {
-      position: fixed;
-      margin-bottom: 40px;
-      bottom: 0;
-    }
-    &:hover {
-      background-color: $Greenery;
-    }
-    .tooltiptext {
-      visibility: hidden;
-      width: 170px;
-      background-color: #555;
-      color: #fff;
-      text-align: center;
-      border-radius: 6px;
-      padding: 3px 0;
-      position: absolute;
-      z-index: 1;
-      left: 100%;
-      -webkit-transition: opacity 0.3s;
-      transition: opacity 0.3s;
-      margin-top: -25px;
-      font-size: 14px;
-    }
-
-    .tooltiptext::after {
-      content: "";
-      position: absolute;
-      top: 30%;
-      right: 100%;
-      border-top: 5px solid transparent;
-      border-bottom: 5px solid transparent;
-      border-right: 5px solid #555;
-    }
-    #bugtip {
-      margin-left: 10px;
-    }
-    &:hover .tooltiptext {
-      visibility: visible;
-      opacity: 1;
-    }
-  }
-  .active {
-    background-color: $Greenery;
-  }
-  label {
-    color: white;
-    width: 100%;
-    margin: 0;
-    text-align: center;
-  }
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-}
-
-.content {
-  font-family: roboto-regular;
-  margin-left: 10%;
-  margin-right: 5%;
   .title {
     text-align: left;
     h2 {
@@ -200,7 +28,7 @@ header {
       width: 48%;
       padding: 20px;
       float: left;
-      &:nth-of-type(1){
+      &:nth-of-type(1) {
         margin-left: 0;
       }
       p:nth-of-type(1) {
@@ -227,7 +55,7 @@ header {
     }
   }
   .metas {
-    h3{
+    h3 {
       text-align: left;
       font-family: roboto-bold;
       color: $GoblinBlue;
@@ -235,7 +63,7 @@ header {
     .meta {
       text-align: center;
       padding: 20px;
-      .wrapper {
+      .holder {
         padding: 20px;
         background-color: #eeeeee;
         img {
@@ -254,12 +82,16 @@ header {
           text-align: center;
           height: 250px;
         }
+        &:hover {
+          background-color: rgba(134, 175, 73, 0.3);
+          cursor: pointer;
+        }
       }
     }
     .objetivo {
       text-align: center;
       padding: 20px;
-      .wrapper {
+      .holder {
         padding: 20px;
         background-color: #eeeeee;
         img {
@@ -281,7 +113,75 @@ header {
       }
     }
   }
-  @media screen and (max-width: 768px) {
-    margin-left: 5%;
+  #DetailsModal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    /* Modal Content */
+    .ModalContent {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 50px;
+      border: 1px solid #888;
+      width: 80%;
+      /* The Close Button */
+      .close {
+        color: #aaaaaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      h1{
+        font-family: roboto-bold;
+        width: 100%;
+        margin-bottom: 50px;
+      }
+      table{
+        text-align: center;
+        width: 100%;
+        margin-bottom: 100px;
+        th{
+          font-family: roboto-thin;
+          font-size: 22px;
+        }
+        td{
+          font-family: roboto-regular;
+          font-size: 42px;
+        }
+      }
+      .data{
+        width: 100%;
+        text-align: center;
+        .progresschart{
+          width: 35%;
+          float: left;
+          margin: 0;
+        }
+        .history{
+          width: 35%;
+          margin: 0;
+          float: right;
+          h3{
+            font-family: roboto-black;
+            font-size: 18px;
+          }
+        }
+        }
+    }
   }
 }
