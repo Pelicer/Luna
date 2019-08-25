@@ -1,32 +1,38 @@
-<link rel="stylesheet" type="text/css" href="/style/css/dashboard.css">
+<link rel="stylesheet" type="text/css" href="style/css/dashboard.css">
 
-<div class="container-fluid wrapper" onLoad="alert('bosta')">
+<div class="container-fluid wrapper">
     <!--Details modal-->
     <div id="DetailsModal" class="modal">
         <div class="ModalContent">
             <span class="close" onClick="CloseModal()">&times;</span>
-            <h1>Farmácia</h1>
-            <h2>Resumo</h2>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>Objetivo Final</th>
-                        <th>Poupado Atual</th>
-                        <th>Falta</th>
-                    </tr>
-                    <tr>
-                        <td>R$ 2.000,00</td>
-                        <td>R$ 1.500,00</td>
-                        <td>R$ 500,00</td>
-                    </tr>
-                </tbody>
-            </table>
+            <h2>Farmácia</h2>
+
+            <div class="summary">
+                <div class="summaryinfo total">
+                    <p>Objetivo Final</p>
+                    <p>R$ 2.000,00</p>
+                </div>
+                <div class="summaryinfo remaining">
+                    <p>Falta</p>
+                    <p>R$ 500,00</p>
+                </div>
+                <div class="summaryinfo saved">
+                    <p>Poupado</p>
+                    <p>R$ 1.500,00</p>
+                </div>
+            </div>
+
             <div class="data">
-                <div class="progresschart">
-                    <h1>teste</h1>
+                <div id="progresschart" class="progresschart">
                 </div>
                 <div class="history">
-                    <h1>Histórico</h1>
+                    <!-- <h2>Histórico</h2> -->
+                    <p><img src="style/content/icon/up.png" />R$200,00<span>04/02/2019</span></p>
+                    <p><img src="style/content/icon/down.png" />R$100,00<span>15/02/2019</span></p>
+                    <p><img src="style/content/icon/up.png" />R$100,00<span>04/03/2019</span></p>
+                    <p><img src="style/content/icon/up.png" />R$350,00<span>03/04/2019</span></p>
+                    <p><img src="style/content/icon/up.png" />R$40,00<span>02/05/2019</span></p>
+                    <p><img src="style/content/icon/up.png" />R$100,00<span>06/06/2019</span></p>
                 </div>
             </div>
         </div>
@@ -109,25 +115,33 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
                     <div class="holder">
+                        <span>2019</span>
                         <p>Notebook</p>
+                        <p>Faltam apenas R$500,00 para chegar lá!</p>
                         <div id="notebook" class="objective"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
                     <div class="holder">
+                        <span>2020</span>
                         <p>Viagem - RJ</p>
+                        <p>Faltam apenas R$500,00 para chegar lá!</p>
                         <div id="viagemrj" class="objective"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
                     <div class="holder">
+                        <span>2022</span>
                         <p>Carro Novo</p>
+                        <p>Faltam apenas R$500,00 para chegar lá!</p>
                         <div id="carronovo" class="objective"></div>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
                     <div class="holder">
+                        <span>2022</span>
                         <p>Casamento</p>
+                        <p>Faltam apenas R$500,00 para chegar lá!</p>
                         <div id="casamento" class="objective"></div>
                     </div>
                 </div>

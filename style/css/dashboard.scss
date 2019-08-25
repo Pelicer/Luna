@@ -66,6 +66,7 @@
       .holder {
         padding: 20px;
         background-color: #eeeeee;
+        transition: background-color ease 0.5s;
         img {
           position: absolute;
           width: 30px;
@@ -89,9 +90,9 @@
       }
     }
     .objetivo {
-      text-align: center;
       padding: 20px;
       .holder {
+        text-align: left;
         padding: 20px;
         background-color: #eeeeee;
         img {
@@ -102,9 +103,24 @@
           margin-left: 35px;
         }
         p {
-          font-family: roboto-black;
           width: 100%;
           font-size: 22px;
+          &:nth-of-type(1) {
+            font-family: roboto-bold;
+            font-weight: bolder;
+          }
+          &:nth-of-type(2) {
+            text-align: center;
+            font-family: roboto-thin;
+          }
+        }
+        span {
+          color: $Greenery;
+          font-family: roboto-black;
+          position: absolute;
+          right: 0;
+          font-size: 22px;
+          margin-right: 40px;
         }
         .graph {
           text-align: center;
@@ -114,24 +130,24 @@
     }
   }
   #DetailsModal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-    /* Modal Content */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
     .ModalContent {
       background-color: #fefefe;
       margin: auto;
-      padding: 50px;
+      padding: 2% 3%;
       border: 1px solid #888;
       width: 80%;
-      /* The Close Button */
+      height: 700px;
+      overflow-x: auto;
       .close {
         color: #aaaaaa;
         float: right;
@@ -146,42 +162,136 @@
         cursor: pointer;
       }
 
-      h1{
+      h2 {
         font-family: roboto-bold;
         width: 100%;
-        margin-bottom: 50px;
       }
-      table{
-        text-align: center;
-        width: 100%;
-        margin-bottom: 100px;
-        th{
-          font-family: roboto-thin;
-          font-size: 22px;
-        }
-        td{
-          font-family: roboto-regular;
-          font-size: 42px;
-        }
-      }
-      .data{
-        width: 100%;
-        text-align: center;
-        .progresschart{
-          width: 35%;
-          float: left;
-          margin: 0;
-        }
-        .history{
-          width: 35%;
-          margin: 0;
-          float: right;
-          h3{
-            font-family: roboto-black;
-            font-size: 18px;
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        .summaryinfo {
+          text-align: center;
+          padding: 0 20px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          p {
+            &:nth-of-type(1) {
+              font-family: roboto-black;
+              font-size: 1.5em;
+              padding-top: 20px;
+              flex: 1;
+            }
+            &:nth-of-type(2) {
+              font-family: roboto-regular;
+              font-size: 1.5em;
+              color: white;
+              flex: 1;
+            }
           }
         }
+        .total {
+          p:nth-of-type(1) {
+            color: $GoblinBlue;
+          }
+          p:nth-of-type(2) {
+            background-color: $GoblinBlue;
+          }
         }
+        .saved {
+          p:nth-of-type(1) {
+            color: $Greenery;
+          }
+          p:nth-of-type(2) {
+            background-color: $Greenery;
+          }
+        }
+        .remaining {
+          p:nth-of-type(1) {
+            color: $SilverBlue;
+          }
+          p:nth-of-type(2) {
+            background-color: $SilverBlue;
+          }
+        }
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
+      }
+      .data {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        .progresschart {
+          width: 100%;
+          height: 500px;
+        }
+        @media screen and (max-width: 768px) {
+          .progresschart {
+            display: none;
+          }
+        }
+        .history {
+          margin: 0 20px;
+          p {
+            position: relative;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+            font-family: roboto-bold;
+            &:nth-of-type(even) {
+              background-color: rgba(134, 175, 73, 0.1);
+            }
+            &:nth-of-type(odd) {
+              background-color: rgba(95, 114, 120, 0.1);
+            }
+            img {
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: 0;
+              margin-left: 10px;
+            }
+            span {
+              margin-right: 10px;
+              position: absolute;
+              right: 0;
+              top: 2px;
+              font-family: roboto-regular;
+              font-size: 10px;
+              color: $GoblinBlue;
+            }
+          }
+        }
+        @media screen and (max-width: 1200px) {
+          grid-template-columns: 1fr;
+          img {
+            margin-left: 20px !important;
+          }
+          span {
+            font-size: 14px !important;
+          }
+          .history {
+            margin: 0;
+          }
+        }
+        @media screen and (max-width: 992px) {
+          padding: 5%;
+        }
+        @media screen and (max-width: 768px) {
+          span {
+            font-size: 10px !important;
+          }
+        }
+        @media screen and (max-width: 1200px) {
+          margin: 0;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        padding: 5%;
+      }
     }
   }
 }

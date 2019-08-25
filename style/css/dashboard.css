@@ -103,6 +103,8 @@
 .wrapper .metas .meta .holder {
   padding: 20px;
   background-color: #eeeeee;
+  -webkit-transition: background-color ease 0.5s;
+  transition: background-color ease 0.5s;
 }
 
 .wrapper .metas .meta .holder img {
@@ -130,11 +132,11 @@
 }
 
 .wrapper .metas .objetivo {
-  text-align: center;
   padding: 20px;
 }
 
 .wrapper .metas .objetivo .holder {
+  text-align: left;
   padding: 20px;
   background-color: #eeeeee;
 }
@@ -148,9 +150,27 @@
 }
 
 .wrapper .metas .objetivo .holder p {
-  font-family: roboto-black;
   width: 100%;
   font-size: 22px;
+}
+
+.wrapper .metas .objetivo .holder p:nth-of-type(1) {
+  font-family: roboto-bold;
+  font-weight: bolder;
+}
+
+.wrapper .metas .objetivo .holder p:nth-of-type(2) {
+  text-align: center;
+  font-family: roboto-thin;
+}
+
+.wrapper .metas .objetivo .holder span {
+  color: #86af49;
+  font-family: roboto-black;
+  position: absolute;
+  right: 0;
+  font-size: 22px;
+  margin-right: 40px;
 }
 
 .wrapper .metas .objetivo .holder .graph {
@@ -160,33 +180,25 @@
 
 .wrapper #DetailsModal {
   display: none;
-  /* Hidden by default */
   position: fixed;
-  /* Stay in place */
   padding-top: 100px;
-  /* Location of the box */
   left: 0;
   top: 0;
   width: 100%;
-  /* Full width */
   height: 100%;
-  /* Full height */
   overflow: auto;
-  /* Enable scroll if needed */
   background-color: black;
-  /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4);
-  /* Black w/ opacity */
-  /* Modal Content */
 }
 
 .wrapper #DetailsModal .ModalContent {
   background-color: #fefefe;
   margin: auto;
-  padding: 50px;
+  padding: 2% 3%;
   border: 1px solid #888;
   width: 80%;
-  /* The Close Button */
+  height: 700px;
+  overflow-x: auto;
 }
 
 .wrapper #DetailsModal .ModalContent .close {
@@ -203,47 +215,176 @@
   cursor: pointer;
 }
 
-.wrapper #DetailsModal .ModalContent h1 {
+.wrapper #DetailsModal .ModalContent h2 {
   font-family: roboto-bold;
   width: 100%;
-  margin-bottom: 50px;
 }
 
-.wrapper #DetailsModal .ModalContent table {
+.wrapper #DetailsModal .ModalContent .summary {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+.wrapper #DetailsModal .ModalContent .summary .summaryinfo {
   text-align: center;
+  padding: 0 20px;
   width: 100%;
-  margin-bottom: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-.wrapper #DetailsModal .ModalContent table th {
-  font-family: roboto-thin;
-  font-size: 22px;
+.wrapper #DetailsModal .ModalContent .summary .summaryinfo p:nth-of-type(1) {
+  font-family: roboto-black;
+  font-size: 1.5em;
+  padding-top: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 
-.wrapper #DetailsModal .ModalContent table td {
+.wrapper #DetailsModal .ModalContent .summary .summaryinfo p:nth-of-type(2) {
   font-family: roboto-regular;
-  font-size: 42px;
+  font-size: 1.5em;
+  color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+.wrapper #DetailsModal .ModalContent .summary .total p:nth-of-type(1) {
+  color: #5f7278;
+}
+
+.wrapper #DetailsModal .ModalContent .summary .total p:nth-of-type(2) {
+  background-color: #5f7278;
+}
+
+.wrapper #DetailsModal .ModalContent .summary .saved p:nth-of-type(1) {
+  color: #86af49;
+}
+
+.wrapper #DetailsModal .ModalContent .summary .saved p:nth-of-type(2) {
+  background-color: #86af49;
+}
+
+.wrapper #DetailsModal .ModalContent .summary .remaining p:nth-of-type(1) {
+  color: #8a9a9a;
+}
+
+.wrapper #DetailsModal .ModalContent .summary .remaining p:nth-of-type(2) {
+  background-color: #8a9a9a;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper #DetailsModal .ModalContent .summary {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
 }
 
 .wrapper #DetailsModal .ModalContent .data {
+  margin-top: 20px;
   width: 100%;
   text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
 }
 
 .wrapper #DetailsModal .ModalContent .data .progresschart {
-  width: 35%;
-  float: left;
-  margin: 0;
+  width: 100%;
+  height: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper #DetailsModal .ModalContent .data .progresschart {
+    display: none;
+  }
 }
 
 .wrapper #DetailsModal .ModalContent .data .history {
-  width: 35%;
-  margin: 0;
-  float: right;
+  margin: 0 20px;
 }
 
-.wrapper #DetailsModal .ModalContent .data .history h3 {
-  font-family: roboto-black;
-  font-size: 18px;
+.wrapper #DetailsModal .ModalContent .data .history p {
+  position: relative;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  font-family: roboto-bold;
+}
+
+.wrapper #DetailsModal .ModalContent .data .history p:nth-of-type(even) {
+  background-color: rgba(134, 175, 73, 0.1);
+}
+
+.wrapper #DetailsModal .ModalContent .data .history p:nth-of-type(odd) {
+  background-color: rgba(95, 114, 120, 0.1);
+}
+
+.wrapper #DetailsModal .ModalContent .data .history p img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
+}
+
+.wrapper #DetailsModal .ModalContent .data .history p span {
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  font-family: roboto-regular;
+  font-size: 10px;
+  color: #5f7278;
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper #DetailsModal .ModalContent .data {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .wrapper #DetailsModal .ModalContent .data img {
+    margin-left: 20px !important;
+  }
+  .wrapper #DetailsModal .ModalContent .data span {
+    font-size: 14px !important;
+  }
+  .wrapper #DetailsModal .ModalContent .data .history {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper #DetailsModal .ModalContent .data {
+    padding: 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper #DetailsModal .ModalContent .data span {
+    font-size: 10px !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .wrapper #DetailsModal .ModalContent .data {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper #DetailsModal .ModalContent {
+    padding: 5%;
+  }
 }
 /*# sourceMappingURL=dashboard.css.map */

@@ -6,6 +6,7 @@ colors.push('rgb(138, 154, 154)');
 function ShowDetailModal(Element) {
     var modal = document.getElementById("DetailsModal");
     modal.style.display = "block";
+    LoadGoalSummary();
 }
 
 function CloseModal() {
@@ -14,6 +15,42 @@ function CloseModal() {
 }
 
 var wrapper = document.getElementById("wrapper");
+
+function LoadGoalSummary() {
+    Highcharts.chart('progresschart', {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar']
+        },
+        yAxis: {
+            title: {
+                text: 'R$'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Farmácia',
+            data: [150.0, 200.0, 350.0]
+        }]
+    });
+}
+
+
 function LoadGraphs() {
     Highcharts.chart('maingoal', {
         chart: {
@@ -93,9 +130,14 @@ function LoadGraphs() {
                 }
             },
             series: [{
-                data: [
-                    { name: '', y: 61.41 },
-                    { name: '', y: 11.84 }
+                data: [{
+                        name: '',
+                        y: 61.41
+                    },
+                    {
+                        name: '',
+                        y: 11.84
+                    }
                 ]
             }],
             exporting: {
@@ -114,7 +156,7 @@ function LoadGraphs() {
             },
             title: {
                 style: {
-                    color: 'white'
+                    color: 'black',
                 },
                 text: '68%',
                 align: 'center',

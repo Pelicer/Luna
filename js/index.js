@@ -33,6 +33,7 @@ function LoadModule(page) {
         if (xhr.readyState == 4) {
             if (xhr.status == 200) {
                 var content = document.getElementById("content");
+                content.classList.remove("loading")
                 content.innerHTML = xhr.responseText;
                 LoadGraphs();
             }
@@ -44,6 +45,12 @@ function LoadModule(page) {
         xhr.abort();
     }
     xhr.send();
+    var parentNode = document.getElementById("content");
+    parentNode.classList.add('loading');
+    parentNode.innerHTML = '';
+    var img = document.createElement("img");
+    img.setAttribute("src", "style/content/loading.gif");
+    parentNode.appendChild(img);
 }
 
 var WindowSize = window.matchMedia("(min-width: 768px)")
