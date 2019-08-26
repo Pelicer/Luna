@@ -102,6 +102,7 @@ function LoadGraphs() {
                 plotShadow: false,
                 type: 'pie',
                 backgroundColor: "transparent",
+                height: 250
             },
             title: {
                 text: ''
@@ -131,13 +132,13 @@ function LoadGraphs() {
             },
             series: [{
                 data: [{
-                        name: '',
-                        y: 61.41
-                    },
-                    {
-                        name: '',
-                        y: 11.84
-                    }
+                    name: '',
+                    y: 61.41
+                },
+                {
+                    name: '',
+                    y: 11.84
+                }
                 ]
             }],
             exporting: {
@@ -147,12 +148,13 @@ function LoadGraphs() {
     }
     var objectives = document.getElementsByClassName("objective");
     for (let i = 0; i < objectives.length; i++) {
-        Highcharts.chart(objectives[i].getAttribute("id"), {
+        var chart = Highcharts.chart(objectives[i].getAttribute("id"), {
             chart: {
                 plotBackgroundColor: null,
                 plotBorderWidth: 0,
                 plotShadow: false,
-                backgroundColor: "transparent"
+                backgroundColor: "transparent",
+                height: 300,
             },
             title: {
                 style: {
@@ -199,5 +201,6 @@ function LoadGraphs() {
                 enabled: false
             }
         });
+        chart.reflow();
     }
 };

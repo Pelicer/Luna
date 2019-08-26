@@ -25,7 +25,6 @@
 
 header {
   font-family: roboto-thin;
-  margin-bottom: 100px;
 }
 
 header .navbar {
@@ -224,8 +223,15 @@ header .navbar ul:nth-of-type(2) .active {
 }
 
 .content {
-  margin-left: 10%;
-  margin-right: 5%;
+  margin-top: 70px;
+  margin-left: 140px;
+  margin-right: 50px;
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    margin-left: 50px;
+  }
 }
 
 .loading {

@@ -1,8 +1,6 @@
 @import "variables.scss";
-
 header {
   font-family: roboto-thin;
-  margin-bottom: 100px;
   .navbar {
     background-color: $SilverBlue;
     width: 100%;
@@ -171,8 +169,12 @@ header {
 }
 
 .content {
-  margin-left: 10%;
-  margin-right: 5%;
+  margin-top: 70px;
+  margin-left: 140px;
+  margin-right: 50px;
+  @media screen and (max-width: 768px) {
+    margin-left: 50px;
+  }
 }
 .loading {
   width: 100%;

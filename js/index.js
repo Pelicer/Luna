@@ -14,13 +14,20 @@ function Activate(e) {
         }
     }
     LoadModule(e.getAttribute("id"));
+    UnloadMenu();
+}
+
+function UnloadMenu() {
+    var items = document.getElementById("hamburguermenu");
+    items.style.display = "none";
+    items.style.height = "0";
+    var menu = document.getElementById("menu");
+    menu.setAttribute("collapsed", 1);
 }
 
 function WatchSize(WindowSize) {
     if (WindowSize.matches) {
-        var items = document.getElementById("hamburguermenu");
-        items.style.display = "none";
-        items.style.height = "0";
+        UnloadMenu();
     }
 }
 
@@ -45,6 +52,10 @@ function LoadModule(page) {
         xhr.abort();
     }
     xhr.send();
+    Loading();
+}
+
+function Loading() {
     var parentNode = document.getElementById("content");
     parentNode.classList.add('loading');
     parentNode.innerHTML = '';
@@ -71,6 +82,6 @@ function ShowMenu(icon) {
 }
 
 
-document.addEventListener("DOMContentLoaded", function (){
+document.addEventListener("DOMContentLoaded", function () {
     LoadModule("dashboard");
 });

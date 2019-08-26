@@ -54,7 +54,7 @@
   margin: 5px;
   height: 100%;
   background-color: #eeeeee;
-  width: 48%;
+  width: 47%;
   padding: 20px;
   float: left;
 }
@@ -81,12 +81,17 @@
 
 .wrapper .divider {
   margin: 20px 0;
+  padding: 0;
 }
 
 .wrapper .divider hr {
   background-color: #eeeeee;
   width: 100%;
   height: 1px;
+}
+
+.wrapper .metas {
+  padding: 0 !important;
 }
 
 .wrapper .metas h3 {
@@ -101,7 +106,7 @@
 }
 
 .wrapper .metas .meta .holder {
-  padding: 20px;
+  padding: 20px 0;
   background-color: #eeeeee;
   -webkit-transition: background-color ease 0.5s;
   transition: background-color ease 0.5s;
@@ -137,8 +142,10 @@
 
 .wrapper .metas .objetivo .holder {
   text-align: left;
-  padding: 20px;
+  padding: 20px 0;
   background-color: #eeeeee;
+  -webkit-transition: background-color ease 0.5s;
+  transition: background-color ease 0.5s;
 }
 
 .wrapper .metas .objetivo .holder img {
@@ -157,11 +164,13 @@
 .wrapper .metas .objetivo .holder p:nth-of-type(1) {
   font-family: roboto-bold;
   font-weight: bolder;
+  margin-left: 20px;
 }
 
 .wrapper .metas .objetivo .holder p:nth-of-type(2) {
   text-align: center;
   font-family: roboto-thin;
+  padding: 0 20px;
 }
 
 .wrapper .metas .objetivo .holder span {
@@ -178,6 +187,11 @@
   height: 250px;
 }
 
+.wrapper .metas .objetivo .holder:hover {
+  background-color: rgba(134, 175, 73, 0.3);
+  cursor: pointer;
+}
+
 .wrapper #DetailsModal {
   display: none;
   position: fixed;
@@ -186,7 +200,7 @@
   top: 0;
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow: hidden;
   background-color: black;
   background-color: rgba(0, 0, 0, 0.4);
 }
@@ -385,6 +399,12 @@
 @media screen and (max-width: 768px) {
   .wrapper #DetailsModal .ModalContent {
     padding: 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper #DetailsModal {
+    padding-top: 0;
   }
 }
 /*# sourceMappingURL=dashboard.css.map */

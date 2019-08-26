@@ -25,7 +25,7 @@
       margin: 5px;
       height: 100%;
       background-color: #eeeeee;
-      width: 48%;
+      width: 47%;
       padding: 20px;
       float: left;
       &:nth-of-type(1) {
@@ -48,6 +48,7 @@
   }
   .divider {
     margin: 20px 0;
+    padding: 0;
     hr {
       background-color: #eeeeee;
       width: 100%;
@@ -55,6 +56,7 @@
     }
   }
   .metas {
+    padding: 0 !important;
     h3 {
       text-align: left;
       font-family: roboto-bold;
@@ -64,7 +66,7 @@
       text-align: center;
       padding: 20px;
       .holder {
-        padding: 20px;
+        padding: 20px 0;
         background-color: #eeeeee;
         transition: background-color ease 0.5s;
         img {
@@ -93,8 +95,9 @@
       padding: 20px;
       .holder {
         text-align: left;
-        padding: 20px;
+        padding: 20px 0;
         background-color: #eeeeee;
+        transition: background-color ease 0.5s;
         img {
           position: absolute;
           width: 30px;
@@ -108,10 +111,12 @@
           &:nth-of-type(1) {
             font-family: roboto-bold;
             font-weight: bolder;
+            margin-left: 20px;
           }
           &:nth-of-type(2) {
             text-align: center;
             font-family: roboto-thin;
+            padding: 0 20px;
           }
         }
         span {
@@ -126,6 +131,10 @@
           text-align: center;
           height: 250px;
         }
+        &:hover {
+          background-color: rgba(134, 175, 73, 0.3);
+          cursor: pointer;
+        }
       }
     }
   }
@@ -137,7 +146,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
     .ModalContent {
@@ -292,6 +301,9 @@
       @media screen and (max-width: 768px) {
         padding: 5%;
       }
+    }
+    @media screen and (max-width: 768px){
+      padding-top: 0;
     }
   }
 }
