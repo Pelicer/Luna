@@ -25,6 +25,10 @@ function UnloadMenu() {
     menu.setAttribute("collapsed", 1);
 }
 
+var WindowSize = window.matchMedia("(min-width: 768px)")
+WatchSize(WindowSize)
+WindowSize.addListener(WatchSize)
+
 function WatchSize(WindowSize) {
     if (WindowSize.matches) {
         UnloadMenu();
@@ -64,10 +68,6 @@ function Loading() {
     parentNode.appendChild(img);
 }
 
-var WindowSize = window.matchMedia("(min-width: 768px)")
-WatchSize(WindowSize)
-WindowSize.addListener(WatchSize)
-
 function ShowMenu(icon) {
     var items = document.getElementById("hamburguermenu");
     if (icon.getAttribute("collapsed") == 1) {
@@ -81,6 +81,33 @@ function ShowMenu(icon) {
     }
 }
 
+function ShowModal(Page) {
+    var url = Page + ".html";
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader('Content-type', 'text/html');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                var modal = document.getElementById("ModalContent");
+                modal.innerHTML = xhr.responseText;
+                modal.style.display = "flex";
+                LoadGoalSummary();
+            }
+        }
+
+    };
+    xhr.timeout = 10000;
+    xhr.ontimeout = function () {
+        xhr.abort();
+    }
+    xhr.send();
+}
+
+function CloseModal() {
+    var modal = document.getElementById("ModalContent");
+    modal.style.display = "none";
+}
 
 document.addEventListener("DOMContentLoaded", function () {
     LoadModule("dashboard");

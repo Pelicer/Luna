@@ -1,7 +1,11 @@
 <link rel="stylesheet" type="text/css" href="/style/css/metas.css">
 
 <div class="container-fluid wrapper">
-    <h2>Metas e Objetivos</h2>
+    <div class="title">
+        <h2>Metas e Objetivos</h2>
+        <button onClick="ShowModal('View/modal/GoalRegistrationModal')">Adicionar <img
+                src="style/content/icon/plus.png"></button>
+    </div>
     <hr />
     <div class="taskbar">
         <button class="filterbtn" onClick="FilterButton(this)">Metas</button>
@@ -17,10 +21,6 @@
                 <option>Saudável</option>
                 <option>Atrasado</option>
             </select>
-        </div>
-        <div class="info">
-            <img src="style/content/icon/filter.png" />
-            <label>3 resultados</label>
         </div>
     </div>
     <div class="datatable">
@@ -52,7 +52,7 @@
                     <td>Objetivo</td>
                     <td>01/02/2020</td>
                     <td>
-                        <div class="ongoal"></div>Em andamento
+                        <div class="ongoal"></div>Saudável
                     </td>
                     <td>R$ 8.000</td>
                     <td></td>
@@ -68,9 +68,12 @@
                     </td>
                     <td>R$ 500.00</td>
                     <td></td>
-
                 </tr>
             </tbody>
         </table>
+        <div class="info">
+            <img src="style/content/icon/filter.png" />
+            <label>3 resultados</label>
+        </div>
     </div>
 </div>

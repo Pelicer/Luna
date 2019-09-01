@@ -1,11 +1,43 @@
 @import "variables.scss";
 
 .wrapper {
-  display: grid;
   grid-template-rows: 1fr;
-  h2 {
-    color: $GoblinBlue;
-    font-family: roboto-bold;
+  margin-bottom: 40px;
+  .title {
+    h2 {
+      display: inline;
+      color: $GoblinBlue;
+      font-family: roboto-bold;
+    }
+    display: inline;
+    button {
+      background-color: $Greenery;
+      margin-left: 15px;
+      padding: 5px 15px;
+      color: white;
+      border-radius: 20px;
+      border: none;
+      font-size: 1.2rem;
+      img {
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+      }
+      &:focus {
+        outline: 0;
+      }
+      &:hover {
+        background-color: rgba(134, 175, 73, 0.8);
+      }
+    }
+    @media screen and(max-width: 768px) {
+      h2 {
+        display: block;
+      }
+      button {
+        margin-left: 0;
+      }
+    }
   }
   .divider {
     width: 100%;
@@ -17,18 +49,20 @@
   }
   .taskbar {
     display: grid;
-    grid-template-columns: 150px 150px 1fr 1fr 1fr;
+    grid-template-columns: 150px 150px 1fr 1fr;
     font-family: roboto-regular;
     .search,
     .status {
       label {
-        margin-left: 30px;
         font-family: roboto-bold;
-        width: 25%;
+        margin-left: 30px;
+        width: 15%;
+        min-width: 120px;
       }
       input,
       select {
-        width: 65%;
+        width: -webkit-fill-available;
+        margin-left: 30px;
         border-radius: 5px;
         padding: 5px;
         border: 1px solid rgba(138, 154, 154, 0.4);
@@ -37,52 +71,57 @@
         }
       }
     }
-    .status {
-      label {
-        margin-left: 10px;
-        width: 15%;
-      }
-    }
-    .info {
-      font-family: roboto-black;
-      text-align: right;
-      img {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-      }
-    }
     button {
       background-color: $SilverBlue;
       padding: 5px 15px;
       color: white;
       border-radius: 20px;
       border: none;
+      margin-top: 34px;
       &:nth-of-type(2) {
         margin-left: 10px;
       }
       &:focus {
         outline: 0;
       }
+      &:hover {
+        background-color: $Greenery;
+      }
     }
     .active {
       background-color: $Greenery;
     }
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 992px) {
       grid-template-columns: 1fr;
+      .search {
+        padding: 15px 0;
+      }
       button {
+        margin-top: 5px;
         margin: 5px 0 !important;
       }
       label {
         margin: 0 !important;
+        width: 100% !important;
       }
-      input,select{
-          margin: 0 !important;
+      input,
+      select {
+        width: 100% !important;
+        margin: 0 !important;
+      }
+      .info {
+        margin: 0;
+        padding: 15px 0px 0px 0px;
+        text-align: left;
+        label {
+          width: auto !important;
+        }
       }
     }
   }
   .datatable {
-    margin-top: 50px;
+    margin-top: 25px;
+    overflow: auto;
     table {
       width: 100%;
       text-align: center;
@@ -126,6 +165,7 @@
         }
         &:nth-of-type(5) {
           width: 15%;
+          min-width: 135px;
         }
         &:nth-of-type(6) {
           width: 10%;
@@ -152,6 +192,20 @@
         .ongoal {
           background-color: $Greenery;
         }
+      }
+    }
+    .info {
+      margin: 0 auto;
+      padding: 20px 0;
+      text-align: right;
+      font-family: roboto-black;
+      * {
+        margin: 0;
+      }
+      img {
+        width: 16px;
+        height: 16px;
+        margin-right: 10px;
       }
     }
   }

@@ -3,18 +3,15 @@ colors.push('rgb(95, 114, 120)');
 colors.push('rgb(134, 175, 73)');
 colors.push('rgb(138, 154, 154)');
 
-function ShowDetailModal(Element) {
-    var modal = document.getElementById("DetailsModal");
-    modal.style.display = "block";
-    LoadGoalSummary();
-}
-
-function CloseModal() {
-    var modal = document.getElementById("DetailsModal");
-    modal.style.display = "none";
-}
-
 var wrapper = document.getElementById("wrapper");
+
+function ImageHover(element, icon) {
+    element.setAttribute('src', 'style/content/icon/' + icon + '.png');
+}
+
+function ImageUnhover(element, icon) {
+    element.setAttribute('src', 'style/content/icon/' + icon + '_black.png');
+}
 
 function LoadGoalSummary() {
     Highcharts.chart('progresschart', {

@@ -23,16 +23,58 @@
   src: url(../content/fonts/roboto/Roboto-Bold.ttf);
 }
 
-.wrapper {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-rows: 1fr;
-      grid-template-rows: 1fr;
+@font-face {
+  font-family: roboto-medium;
+  src: url(../content/fonts/roboto/Roboto-Medium.ttf);
 }
 
-.wrapper h2 {
+.wrapper {
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  margin-bottom: 40px;
+}
+
+.wrapper .title {
+  display: inline;
+}
+
+.wrapper .title h2 {
+  display: inline;
   color: #5f7278;
   font-family: roboto-bold;
+}
+
+.wrapper .title button {
+  background-color: #86af49;
+  margin-left: 15px;
+  padding: 5px 15px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.wrapper .title button img {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+
+.wrapper .title button:focus {
+  outline: 0;
+}
+
+.wrapper .title button:hover {
+  background-color: rgba(134, 175, 73, 0.8);
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper .title h2 {
+    display: block;
+  }
+  .wrapper .title button {
+    margin-left: 0;
+  }
 }
 
 .wrapper .divider {
@@ -47,23 +89,25 @@
 .wrapper .taskbar {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 150px 150px 1fr 1fr 1fr;
-      grid-template-columns: 150px 150px 1fr 1fr 1fr;
+  -ms-grid-columns: 150px 150px 1fr 1fr;
+      grid-template-columns: 150px 150px 1fr 1fr;
   font-family: roboto-regular;
 }
 
 .wrapper .taskbar .search label,
 .wrapper .taskbar .status label {
-  margin-left: 30px;
   font-family: roboto-bold;
-  width: 25%;
+  margin-left: 30px;
+  width: 15%;
+  min-width: 120px;
 }
 
 .wrapper .taskbar .search input,
 .wrapper .taskbar .search select,
 .wrapper .taskbar .status input,
 .wrapper .taskbar .status select {
-  width: 65%;
+  width: -webkit-fill-available;
+  margin-left: 30px;
   border-radius: 5px;
   padding: 5px;
   border: 1px solid rgba(138, 154, 154, 0.4);
@@ -76,28 +120,13 @@
   outline: 0;
 }
 
-.wrapper .taskbar .status label {
-  margin-left: 10px;
-  width: 15%;
-}
-
-.wrapper .taskbar .info {
-  font-family: roboto-black;
-  text-align: right;
-}
-
-.wrapper .taskbar .info img {
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-}
-
 .wrapper .taskbar button {
   background-color: #8a9a9a;
   padding: 5px 15px;
   color: white;
   border-radius: 20px;
   border: none;
+  margin-top: 34px;
 }
 
 .wrapper .taskbar button:nth-of-type(2) {
@@ -108,28 +137,48 @@
   outline: 0;
 }
 
+.wrapper .taskbar button:hover {
+  background-color: #86af49;
+}
+
 .wrapper .taskbar .active {
   background-color: #86af49;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
   .wrapper .taskbar {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
   }
+  .wrapper .taskbar .search {
+    padding: 15px 0;
+  }
   .wrapper .taskbar button {
+    margin-top: 5px;
     margin: 5px 0 !important;
   }
   .wrapper .taskbar label {
     margin: 0 !important;
+    width: 100% !important;
   }
-  .wrapper .taskbar input, .wrapper .taskbar select {
+  .wrapper .taskbar input,
+  .wrapper .taskbar select {
+    width: 100% !important;
     margin: 0 !important;
+  }
+  .wrapper .taskbar .info {
+    margin: 0;
+    padding: 15px 0px 0px 0px;
+    text-align: left;
+  }
+  .wrapper .taskbar .info label {
+    width: auto !important;
   }
 }
 
 .wrapper .datatable {
-  margin-top: 50px;
+  margin-top: 25px;
+  overflow: auto;
 }
 
 .wrapper .datatable table {
@@ -187,6 +236,7 @@
 .wrapper .datatable table th:nth-of-type(5),
 .wrapper .datatable table td:nth-of-type(5) {
   width: 15%;
+  min-width: 135px;
 }
 
 .wrapper .datatable table th:nth-of-type(6),
@@ -220,5 +270,22 @@
 
 .wrapper .datatable table td .ongoal {
   background-color: #86af49;
+}
+
+.wrapper .datatable .info {
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: right;
+  font-family: roboto-black;
+}
+
+.wrapper .datatable .info * {
+  margin: 0;
+}
+
+.wrapper .datatable .info img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
 }
 /*# sourceMappingURL=metas.css.map */

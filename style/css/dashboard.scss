@@ -65,17 +65,30 @@
     .meta {
       text-align: center;
       padding: 20px;
+      img {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 0;
+        margin-right: 35px;
+        padding: 6px;
+        border-radius: 12px;
+        background-color: white;
+        float: right;
+        margin-top: 20px;
+        cursor: pointer;
+        &:hover {
+          background-color: $Greenery;
+        }
+        &:nth-of-type(2) {
+          margin-right: 75px;
+        }
+      }
       .holder {
         padding: 20px 0;
         background-color: #eeeeee;
         transition: background-color ease 0.5s;
-        img {
-          position: absolute;
-          width: 30px;
-          height: 30px;
-          left: 0;
-          margin-left: 35px;
-        }
+
         p {
           font-family: roboto-black;
           width: 100%;
@@ -93,25 +106,38 @@
     }
     .objetivo {
       padding: 20px;
+      img {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        right: 0;
+        margin-right: 35px;
+        padding: 6px;
+        border-radius: 12px;
+        background-color: white;
+        float: right;
+        margin-top: 20px;
+        cursor: pointer;
+        &:hover {
+          background-color: $Greenery;
+        }
+        &:nth-of-type(2) {
+          margin-right: 75px;
+        }
+      }
       .holder {
         text-align: left;
         padding: 20px 0;
         background-color: #eeeeee;
         transition: background-color ease 0.5s;
-        img {
-          position: absolute;
-          width: 30px;
-          height: 30px;
-          left: 0;
-          margin-left: 35px;
-        }
         p {
           width: 100%;
           font-size: 22px;
           &:nth-of-type(1) {
             font-family: roboto-bold;
             font-weight: bolder;
-            margin-left: 20px;
+            margin-right: 20px;
+            text-align: center;
           }
           &:nth-of-type(2) {
             text-align: center;
@@ -123,9 +149,9 @@
           color: $Greenery;
           font-family: roboto-black;
           position: absolute;
-          right: 0;
+          left: 0;
           font-size: 22px;
-          margin-right: 40px;
+          margin-left: 35px;
         }
         .graph {
           text-align: center;
@@ -136,174 +162,6 @@
           cursor: pointer;
         }
       }
-    }
-  }
-  #DetailsModal {
-    display: none;
-    position: fixed;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background-color: rgb(0, 0, 0);
-    background-color: rgba(0, 0, 0, 0.4);
-    .ModalContent {
-      background-color: #fefefe;
-      margin: auto;
-      padding: 2% 3%;
-      border: 1px solid #888;
-      width: 80%;
-      height: 700px;
-      overflow-x: auto;
-      .close {
-        color: #aaaaaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-      }
-
-      .close:hover,
-      .close:focus {
-        color: #000;
-        text-decoration: none;
-        cursor: pointer;
-      }
-
-      h2 {
-        font-family: roboto-bold;
-        width: 100%;
-      }
-      .summary {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        .summaryinfo {
-          text-align: center;
-          padding: 0 20px;
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          p {
-            &:nth-of-type(1) {
-              font-family: roboto-black;
-              font-size: 1.5em;
-              padding-top: 20px;
-              flex: 1;
-            }
-            &:nth-of-type(2) {
-              font-family: roboto-regular;
-              font-size: 1.5em;
-              color: white;
-              flex: 1;
-            }
-          }
-        }
-        .total {
-          p:nth-of-type(1) {
-            color: $GoblinBlue;
-          }
-          p:nth-of-type(2) {
-            background-color: $GoblinBlue;
-          }
-        }
-        .saved {
-          p:nth-of-type(1) {
-            color: $Greenery;
-          }
-          p:nth-of-type(2) {
-            background-color: $Greenery;
-          }
-        }
-        .remaining {
-          p:nth-of-type(1) {
-            color: $SilverBlue;
-          }
-          p:nth-of-type(2) {
-            background-color: $SilverBlue;
-          }
-        }
-        @media screen and (max-width: 768px) {
-          grid-template-columns: 1fr;
-        }
-      }
-      .data {
-        margin-top: 20px;
-        width: 100%;
-        text-align: center;
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-        .progresschart {
-          width: 100%;
-          height: 500px;
-        }
-        @media screen and (max-width: 768px) {
-          .progresschart {
-            display: none;
-          }
-        }
-        .history {
-          margin: 0 20px;
-          p {
-            position: relative;
-            text-align: center;
-            padding: 15px;
-            font-size: 20px;
-            font-family: roboto-bold;
-            &:nth-of-type(even) {
-              background-color: rgba(134, 175, 73, 0.1);
-            }
-            &:nth-of-type(odd) {
-              background-color: rgba(95, 114, 120, 0.1);
-            }
-            img {
-              width: 30px;
-              height: 30px;
-              position: absolute;
-              left: 0;
-              margin-left: 10px;
-            }
-            span {
-              margin-right: 10px;
-              position: absolute;
-              right: 0;
-              top: 2px;
-              font-family: roboto-regular;
-              font-size: 10px;
-              color: $GoblinBlue;
-            }
-          }
-        }
-        @media screen and (max-width: 1200px) {
-          grid-template-columns: 1fr;
-          img {
-            margin-left: 20px !important;
-          }
-          span {
-            font-size: 14px !important;
-          }
-          .history {
-            margin: 0;
-          }
-        }
-        @media screen and (max-width: 992px) {
-          padding: 5%;
-        }
-        @media screen and (max-width: 768px) {
-          span {
-            font-size: 10px !important;
-          }
-        }
-        @media screen and (max-width: 1200px) {
-          margin: 0;
-        }
-      }
-      @media screen and (max-width: 768px) {
-        padding: 5%;
-      }
-    }
-    @media screen and (max-width: 768px){
-      padding-top: 0;
     }
   }
 }

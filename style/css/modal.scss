@@ -1,0 +1,463 @@
+@import "variables.scss";
+#ModalContent {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  justify-content: center;
+  .Content {
+    align-self: center;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 2% 3%;
+    width: 80%;
+    height: auto;
+    overflow-x: auto;
+    border-radius: 5px;
+    border: 2px solid rgba(201, 200, 199, 0.4);
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .GoalDetail {
+      h2 {
+        font-family: roboto-bold;
+        width: 100%;
+      }
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        .summaryinfo {
+          text-align: center;
+          padding: 0 20px;
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          p {
+            &:nth-of-type(1) {
+              font-family: roboto-black;
+              font-size: 1.5em;
+              padding-top: 20px;
+              flex: 1;
+            }
+            &:nth-of-type(2) {
+              font-family: roboto-regular;
+              font-size: 1.5em;
+              color: white;
+              flex: 1;
+            }
+          }
+        }
+        .total {
+          p:nth-of-type(1) {
+            color: $GoblinBlue;
+          }
+          p:nth-of-type(2) {
+            background-color: $GoblinBlue;
+          }
+        }
+        .saved {
+          p:nth-of-type(1) {
+            color: $Greenery;
+          }
+          p:nth-of-type(2) {
+            background-color: $Greenery;
+          }
+        }
+        .remaining {
+          p:nth-of-type(1) {
+            color: $SilverBlue;
+          }
+          p:nth-of-type(2) {
+            background-color: $SilverBlue;
+          }
+        }
+        @media screen and (max-width: 768px) {
+          grid-template-columns: 1fr;
+        }
+      }
+      .data {
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        .progresschart {
+          width: 100%;
+          height: 500px;
+        }
+        @media screen and (max-width: 768px) {
+          .progresschart {
+            display: none;
+          }
+        }
+        .history {
+          margin: 0 20px;
+          p {
+            position: relative;
+            text-align: center;
+            padding: 15px;
+            font-size: 20px;
+            font-family: roboto-bold;
+            &:nth-of-type(even) {
+              background-color: rgba(134, 175, 73, 0.1);
+            }
+            &:nth-of-type(odd) {
+              background-color: rgba(95, 114, 120, 0.1);
+            }
+            img {
+              width: 30px;
+              height: 30px;
+              position: absolute;
+              left: 0;
+              margin-left: 10px;
+            }
+            span {
+              margin-right: 10px;
+              position: absolute;
+              right: 0;
+              top: 2px;
+              font-family: roboto-regular;
+              font-size: 10px;
+              color: $GoblinBlue;
+            }
+          }
+        }
+        @media screen and (max-width: 1200px) {
+          grid-template-columns: 1fr;
+          img {
+            margin-left: 20px !important;
+          }
+          span {
+            font-size: 14px !important;
+          }
+          .history {
+            margin: 0;
+          }
+        }
+        @media screen and (max-width: 992px) {
+          padding: 5%;
+        }
+        @media screen and (max-width: 768px) {
+          span {
+            font-size: 10px !important;
+          }
+        }
+        @media screen and (max-width: 1200px) {
+          margin: 0;
+        }
+      }
+      @media screen and (max-width: 768px) {
+        padding: 5%;
+      }
+    }
+    .RegisterModal {
+      .choise {
+        h2 {
+          font-family: roboto-bold;
+        }
+        .choises {
+          display: grid;
+          margin-top: 20px;
+          grid-template-columns: 50% 50%;
+          grid-template-rows: 1fr;
+          grid-gap: 20px;
+          .item {
+            text-align: center;
+            height: 100%;
+            background-color: #eeeeee;
+            transition: background-color ease 0.5s;
+            cursor: pointer;
+            &:hover {
+              background-color: white;
+            }
+            .design {
+              display: block;
+              margin: 0 auto;
+              width: 100%;
+              height: 300px;
+              margin-bottom: 20px;
+              background-color: $GoblinBlue;
+              .meta {
+                margin-top: 10%;
+                width: 150px;
+                height: 150px;
+              }
+              .objective {
+                width: 300px;
+                height: 300px;
+              }
+            }
+            h3 {
+              font-family: roboto-bold;
+              color: $GoblinBlue;
+            }
+            p {
+              font-family: roboto-regular;
+              text-align: justify;
+              color: $GoblinBlue;
+              padding: 30px;
+            }
+          }
+          @media screen and (max-width: 992px) {
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr;
+            grid-gap: 20px;
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      height: 100%;
+      border: none;
+      border-radius: 0;
+      padding-top: 0;
+    }
+  }
+  .NoBackground {
+    .close {
+      color: white;
+    }
+    background-color: transparent;
+    margin: auto;
+    padding: 2% 3%;
+    width: 80%;
+    overflow-x: auto;
+    border-radius: 5px;
+    border: none;
+  }
+  .Add,
+  .Confirmation,
+  .NewMeta,
+  .NewObjective {
+    width: 500px;
+    h2 {
+      font-family: roboto-black;
+      font-size: 1.5rem;
+    }
+    hr {
+      background-color: $GoblinBlue;
+    }
+    .tooltiptext {
+      font-family: roboto-regular;
+      visibility: hidden;
+      width: 230px;
+      background-color: #555;
+      color: #fff;
+      border-radius: 6px;
+      padding: 10px;
+      position: absolute;
+      left: 165px;
+      z-index: 1;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+      margin-top: -25px;
+      font-size: 14px;
+    }
+    .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: 15%;
+      right: 100%;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid transparent;
+      border-right: 5px solid #555;
+    }
+    label {
+      font-family: roboto-regular;
+      margin-top: 10px;
+      position: relative;
+      img {
+        margin-left: 5px;
+        width: 12px;
+        height: 12px;
+      }
+      &:hover .tooltiptext {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+    input {
+      width: -webkit-fill-available;
+      border-radius: 5px;
+      padding: 5px;
+      border: 1px solid rgba(138, 154, 154, 0.4);
+    }
+    .amount {
+      label {
+        font-size: 1.4em;
+        margin: 0;
+        font-family: roboto-black;
+        width: 10%;
+        float: left;
+      }
+      input {
+        width: 88%;
+        float: right;
+      }
+    }
+    .value {
+      font-family: roboto-black;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+    button {
+      background-color: $Greenery;
+      padding: 5px 15px;
+      color: white;
+      border-radius: 20px;
+      border: none;
+      margin-top: 34px;
+      width: 100%;
+      &:nth-of-type(2) {
+        margin-left: 10px;
+      }
+      &:focus {
+        outline: 0;
+      }
+      &:hover {
+        background-color: rgba(134, 175, 73, 0.8);
+      }
+    }
+    .warning {
+      margin-top: 8px;
+      display: none;
+      font-size: 12px;
+      left: 165px;
+      width: auto;
+      text-align: right;
+      font-family: roboto-black;
+      color: red;
+      float: right;
+    }
+    @media screen and (max-width: 768px) {
+      padding: 50px;
+    }
+  }
+  .Confirmation {
+    button {
+      background-color: $Greenery;
+      padding: 5px 15px;
+      color: white;
+      border-radius: 0;
+      border: none;
+      margin: 0;
+      display: inline;
+      margin-top: 20px;
+      width: 49%;
+      &:nth-of-type(2) {
+        margin-left: 0;
+        background-color: red;
+      }
+    }
+  }
+  .NewObjective {
+    .tooltiptext {
+      font-family: roboto-regular;
+      visibility: hidden;
+      width: 230px;
+      background-color: #555;
+      color: #fff;
+      border-radius: 6px;
+      padding: 10px;
+      position: absolute;
+      left: 165px;
+      z-index: 1;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    .tooltiptext::after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 50%;
+      border-top: 5px solid transparent;
+      border-bottom: 5px solid #555;
+      border-right: 5px solid transparent;
+    }
+    .first::after,
+    .second::after {
+      right: 50%;
+    }
+    .third::after {
+      right: 30%;
+    }
+    .fourth::after {
+      right: 75%;
+    }
+    .switch {
+      position: relative;
+      margin: 10px 0 0 0;
+      display: inline-block;
+      width: 60px;
+      float: right;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      border-radius: 34px;
+      height: 27px;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      -webkit-transition: 0.4s;
+      border-radius: 50%;
+      transition: 0.4s;
+    }
+
+    input:checked + .slider {
+      background-color: $Greenery;
+    }
+
+    input:focus + .slider {
+      box-shadow: 0 0 1px $Greenery;
+    }
+
+    input:checked + .slider:before {
+      -webkit-transform: translateX(26px);
+      -ms-transform: translateX(26px);
+      transform: translateX(26px);
+    }
+  }
+}

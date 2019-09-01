@@ -22,4 +22,9 @@
   font-family: roboto-bold;
   src: url(../content/fonts/roboto/Roboto-Bold.ttf);
 }
+
+@font-face {
+  font-family: roboto-medium;
+  src: url(../content/fonts/roboto/Roboto-Medium.ttf);
+}
 /*# sourceMappingURL=variables.css.map */

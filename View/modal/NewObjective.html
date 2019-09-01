@@ -1,0 +1,35 @@
+<div class="Content NewObjective">
+    <span class="close" onClick="CloseModal()">&times;</span>
+    <h2>Cadastro de Objetivos</h2>
+    <hr>
+    <label for="name">Como deseja entitular este objetivo?
+        <img src="../../style/content/icon/question.png">
+        <span class="tooltiptext first">Algo que se lembre, como "Novo notebook"</span>
+    </label>
+    <input id="Name" name="name">
+    <p class="warning" id="NameWarning">Por favor, insira um título</p>
+
+    <label for="limit">Até quando deseja ter esta quantia?
+        <img src="../../style/content/icon/question.png">
+        <span class="tooltiptext second">Esta é a data limite para juntar a quantia</span>
+    </label>
+    <input id="LimitDate" type="date" name="limit">
+    <p class="warning" id="LimitDateWarning">Por favor, insira uma data limite</p>
+
+    <label for="amount">Quanto precisa poupar para este objetivo?
+        <img src="../../style/content/icon/question.png">
+        <span class="tooltiptext third">Quanto, no total, lhe custará este objetivo?</span>
+    </label>
+    <input class="value" id="ObjectiveAmount" name="amount" min=0 type="number" step=100>
+    <p class="warning" id="ObjectiveAmountWarning">Por favor, insira uma quantia final</p>
+
+    <label for="principal">Este é seu objetivo principal?
+        <img src="../../style/content/icon/question.png">
+        <span class="tooltiptext fourth">O objetivo principal tem mais informações que os outros no dashboard</span>
+    </label>
+    <label class="switch">
+        <input type="checkbox">
+        <span class="slider round"></span>
+    </label>
+    <button onClick="ValidateFields('objetivo');">Registrar</button>
+</div>

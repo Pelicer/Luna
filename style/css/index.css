@@ -23,6 +23,17 @@
   src: url(../content/fonts/roboto/Roboto-Bold.ttf);
 }
 
+@font-face {
+  font-family: roboto-medium;
+  src: url(../content/fonts/roboto/Roboto-Medium.ttf);
+}
+
+@media screen and (max-width: 768px) {
+  html ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 header {
   font-family: roboto-thin;
 }
@@ -239,13 +250,13 @@ header .navbar ul:nth-of-type(2) .active {
   height: 100%;
   position: absolute;
   top: 0;
-  margin: 0 auto;
   text-align: center;
   background-color: rgba(255, 255, 255, 0.5);
   z-index: 100;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 0 auto;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
