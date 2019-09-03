@@ -27,38 +27,27 @@ function CheckEmail(Email) {
     }
 }
 
-// function LoadRegistrationPage() {
-//     var xhr = new XMLHttpRequest();
-//     xhr.open("GET", "registration.html", true);
-//     xhr.onreadystatechange = function () {
-//         if (xhr.readyState = 4) {
-//             if (xhr.status == 200) {
-//                 var body = document.getElementById("content");
-//                 body.innerHTML = xhr.responseText;
-//             }
-//         }
-//     }
-//     xhr.send();
-// }
 function renderButton() {
     gapi.signin2.render('my-signin2', {
-      'scope': 'profile email',
-      'width': 240,
-      'height': 50,
-      'longtitle': true,
-      'theme': 'dark'
+        'scope': 'profile email',
+        'width': 240,
+        'height': 50,
+        'longtitle': true,
+        'theme': 'dark'
     });
-  }
+}
 
 function CheckPasswordStrenth(e) {
     var pass = e.value;
     var pattern = new RegExp(/[@#$%^&*!()_+\-=\[\]{};':"\\|,.<>\/?]+/)
+    var parent = document.getElementById("password-info");
     var strenth = document.getElementById("strength");
     var informative = document.getElementById("informative");
     var check = document.getElementById("checkpassword");
     check.value = "";
 
     if (pass.length > 0) {
+        parent.style.display = "block";
         strenth.style.display = "block";
         informative.style.display = "block";
         if (pattern.test(pass)) {
