@@ -1,0 +1,28 @@
+<div class="Content NewMeta">
+    <span class="close" onClick="CloseModal()">&times;</span>
+
+    <h2>Cadastro de Metas</h2>
+    <hr>
+    <p id="formerror"></p>
+    <label for="title">Título<img src="../../style/content/icon/question.png">
+        <span class="tooltiptext">Um título simples para se lembrar desta meta</span>
+    </label>
+    <input id="Title" name="title">
+    <p class="warning" id="TitleWarning">Por favor, insira uma categoria</p>
+    <label for="category">Categoria<img src="../../style/content/icon/question.png">
+        <span class="tooltiptext">Deseja limitar seus gastos com o quê? Lazer, transporte, mercado?</span>
+    </label>
+    <select id="Categories">
+        <option>Selecione</option>
+    </select>
+    <p class="warning" id="CategoryWarning">Por favor, insira uma categoria</p>
+    <label for="amount">Quanto deseja gastar mensalmente?</label>
+    <div class="amount">
+        <label>R$</label>
+        <input id="CategoryAmount" class="value" step="100" name="amount" min=0 type="number">
+        <p class="warning" id="AmountWarning">Por favor, insira um valor maior que 0</p>
+    </div>
+    <button onClick="ValidateModalFields('meta');">Registrar</button>
+    <div id="Warnings" class="warnings">
+    </div>
+</div>

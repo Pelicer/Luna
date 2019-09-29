@@ -1,0 +1,143 @@
+@import "variables.scss";
+
+body,
+html {
+  width: 100%;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  font-family: roboto-regular;
+  h3,
+  h2 {
+    text-align: left;
+    font-family: roboto-bold;
+    color: $GoblinBlue;
+  }
+  h2,
+  h3,
+  .divider {
+    grid-column: span 4;
+  }
+  .mainchart {
+    grid-column: span 2;
+  }
+  .mainsummary {
+    grid-column: span 2;
+    width: 100%;
+    margin: 0;
+    h3 {
+      span {
+        font-family: roboto-black;
+        color: $Greenery;
+      }
+    }
+    div {
+      margin: 5px 0px;
+      background-color: #eeeeee;
+      padding: 20px;
+      float: left;
+      &:nth-of-type(1) {
+        margin-left: 0;
+      }
+      p:nth-of-type(1) {
+        img {
+          float: left;
+          margin-right: 20px;
+          width: 40px;
+          height: 40px;
+        }
+        .description {
+          font-family: roboto-thin;
+        }
+        font-size: 28px;
+        font-family: roboto-black;
+      }
+    }
+  }
+  .divider {
+    margin: 20px 0;
+    padding: 0;
+    background-color: #eeeeee;
+    height: 1px;
+  }
+  .meta,
+  .objetivo {
+    padding: 0 20px;
+    position: relative;
+    text-align: center;
+    img {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      right: 0;
+      margin-right: 35px;
+      padding: 6px;
+      border-radius: 12px;
+      background-color: white;
+      float: right;
+      margin-top: 20px;
+      cursor: pointer;
+      &:hover {
+        background-color: $Greenery;
+      }
+      &:nth-of-type(2) {
+        margin-right: 75px;
+      }
+    }
+    .holder {
+      padding: 20px 0;
+      background-color: #eeeeee;
+      transition: background-color ease 0.5s;
+
+      p {
+        font-family: roboto-black;
+        font-size: 22px;
+      }
+      .graph {
+        text-align: center;
+        height: 250px;
+      }
+      &:hover {
+        background-color: rgba(134, 175, 73, 0.3);
+        cursor: pointer;
+      }
+    }
+
+  }
+  .objetivo {
+    .holder {
+      p {
+        width: 100%;
+        font-size: 22px;
+        &:nth-of-type(1) {
+          font-family: roboto-bold;
+          font-weight: bolder;
+          margin-right: 20px;
+          text-align: center;
+        }
+        &:nth-of-type(2) {
+          text-align: center;
+          font-family: roboto-thin;
+          padding: 0 20px;
+        }
+      }
+      span {
+        color: $Greenery;
+        font-family: roboto-black;
+        position: absolute;
+        left: 0;
+        font-size: 22px;
+        margin-left: 35px;
+      }
+      .graph {
+        text-align: center;
+        height: 250px;
+      }
+      &:hover {
+        background-color: rgba(134, 175, 73, 0.3);
+        cursor: pointer;
+      }
+    }
+  }
+}

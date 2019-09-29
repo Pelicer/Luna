@@ -1,0 +1,81 @@
+<html>
+
+<head>
+    <meta charset="ISO-8859-1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna</title>
+    <link rel="stylesheet" type="text/css" href="style/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="style/css/index.css">
+    <link rel="stylesheet" type="text/css" href="style/css/modal.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <ul>
+                <li id="menu" collapsed="1" onClick="ShowMenu(this);"><img src="style/content/icon/hamburguer.png"></li>
+                <li><img src="style/content/icon/user.png">Pelicer</li>
+                <li><img src="style/content/icon/exit.png"><a href="landing.html" onClick="Logout()">Sair</a></li>
+            </ul>
+            <ul id="hamburguermenu">
+                <li>
+                    <hr />
+                </li>
+                <li id="dashboard" onClick="Activate(this)" class="menuitem"><img
+                        src="style/content/icon/home_white.png">Home</li>
+                <li id="metas" onClick="Activate(this)" class="menuitem"><img
+                        src="style/content/icon/bullseye_white.png">Metas</li>
+                <li id="config" onClick="Activate(this)" class="menuitem"><img
+                        src="style/content/icon/settings_white.png">Config</li>
+                <li id="bug" onClick="Activate(this)" class="menuitem"><img src="style/content/icon/bug.png">Report Bugs
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="leftmenu">
+        <img class="logo" src="style/content/logo.png">
+        <div id="dashboard" onClick="Activate(this)" class="icon active"><img alt="Tela principal"
+                src="style/content/icon/home_white.png">
+            <span class="tooltiptext">Página Principal</span>
+        </div>
+        <label>Home</label>
+        <div id="metas" onClick="Activate(this)" class="icon" alt="Metas e objetivos"><img
+                src="style/content/icon/bullseye_white.png">
+            <span class="tooltiptext">Metas e objetivos</span></div>
+        <label>Metas</label>
+        <div id="config" onClick="Activate(this)" class="icon" alt="Configurações de conta"><img
+                src="style/content/icon/settings_white.png">
+            <span class="tooltiptext">Configurações da conta</span></div>
+        <label>Config</label>
+        <div id="bug" onClick="Activate(this)" class="icon" alt="Reportar um bug"><img class="bug"
+                src="style/content/icon/bug.png">
+            <span id="bugtip" class="tooltiptext">Reportar um bug</span></div>
+    </section>
+
+    <div class="userInfo"></div>
+
+    <section id="content" class="content">
+    </section>
+    <!--Details modal-->
+    <div id="ModalContent" class="modal">
+
+    </div>
+</body>
+
+<script src="js/jquery/jquery-3.4.1.min.js"></script>
+<script src="js/highchart/highcharts.js"></script>
+<script src="js/highchart/exporting.js"></script>
+<script src="js/highchart/exportdata.js "></script>
+<script src="js/bootstrap/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+<script src="js/dashboard.js"></script>
+<script src="js/metas.js"></script>
+<script src="js/modal.js"></script>
+<script src="js/landing.js"></script>
+<script src="js/sessionhandler.js"></script>
+<script src="js/services/LunaCallbackServices.js"></script>
+<script src="js/services/LunaRequestServices.js"></script>
+
+</html>

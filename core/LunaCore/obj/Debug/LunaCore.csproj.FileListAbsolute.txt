@@ -1,0 +1,16 @@
+C:\Users\WORKSTATION\source\repos\LunaCore\LunaCore\obj\Debug\LunaCore.csprojAssemblyReference.cache
+C:\Users\WORKSTATION\source\repos\LunaCore\LunaCore\obj\Debug\LunaCore.csproj.CoreCompileInputs.cache
+C:\Users\WORKSTATION\source\repos\LunaCore\LunaCore\bin\LunaCore.dll.config
+C:\Users\WORKSTATION\source\repos\LunaCore\LunaCore\bin\LunaCore.dll
+C:\Users\WORKSTATION\source\repos\LunaCore\LunaCore\bin\LunaCore.pdb
+C:\Users\WORKSTATION\source\repos\LunaCore\LunaCore\obj\Debug\LunaCore.dll
+C:\Users\WORKSTATION\source\repos\LunaCore\LunaCore\obj\Debug\LunaCore.pdb
+C:\Users\WORKSTATION\Documents\repo\Luna\core\LunaCore\bin\LunaCore.dll.config
+C:\Users\WORKSTATION\Documents\repo\Luna\core\LunaCore\bin\LunaCore.dll
+C:\Users\WORKSTATION\Documents\repo\Luna\core\LunaCore\bin\LunaCore.pdb
+C:\Users\WORKSTATION\Documents\repo\Luna\core\LunaCore\bin\Newtonsoft.Json.dll
+C:\Users\WORKSTATION\Documents\repo\Luna\core\LunaCore\bin\Newtonsoft.Json.xml
+C:\Users\WORKSTATION\Documents\repo\Luna\core\LunaCore\obj\Debug\LunaCore.csproj.CoreCompileInputs.cache
+C:\Users\WORKSTATION\Documents\repo\Luna\core\LunaCore\obj\Debug\LunaCore.csproj.CopyComplete
+C:\Users\WORKSTATION\Documents\repo\Luna\core\LunaCore\obj\Debug\LunaCore.dll
+C:\Users\WORKSTATION\Documents\repo\Luna\core\LunaCore\obj\Debug\LunaCore.pdb

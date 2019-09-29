@@ -1,0 +1,10 @@
+{
+    "LunaServices":{
+     "ServiceUrl":"http://workstation/LunaCore/LunaService.svc",
+     "Methods":{
+            "RegisterUser": "RegisterUser",
+            "GetProfiles": "GetProfiles",
+            "Login": "Login"
+        }        
+    }
+}

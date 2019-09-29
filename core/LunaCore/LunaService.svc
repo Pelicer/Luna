@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="LunaCore.LunaService" CodeBehind="LunaService.svc.cs" %>

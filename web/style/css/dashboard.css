@@ -1,0 +1,200 @@
+@font-face {
+  font-family: roboto-regular;
+  src: url(../content/fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-thin;
+  src: url(../content/fonts/roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: roboto-black;
+  src: url(../content/fonts/roboto/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url(../content/fonts/roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: roboto-bold;
+  src: url(../content/fonts/roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: roboto-medium;
+  src: url(../content/fonts/roboto/Roboto-Medium.ttf);
+}
+
+body,
+html {
+  width: 100%;
+}
+
+.wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (25%)[4];
+      grid-template-columns: repeat(4, 25%);
+  font-family: roboto-regular;
+}
+
+.wrapper h3,
+.wrapper h2 {
+  text-align: left;
+  font-family: roboto-bold;
+  color: #5f7278;
+}
+
+.wrapper h2,
+.wrapper h3,
+.wrapper .divider {
+  grid-column: span 4;
+}
+
+.wrapper .mainchart {
+  grid-column: span 2;
+}
+
+.wrapper .mainsummary {
+  grid-column: span 2;
+  width: 100%;
+  margin: 0;
+}
+
+.wrapper .mainsummary h3 span {
+  font-family: roboto-black;
+  color: #86af49;
+}
+
+.wrapper .mainsummary div {
+  margin: 5px 0px;
+  background-color: #eeeeee;
+  padding: 20px;
+  float: left;
+}
+
+.wrapper .mainsummary div:nth-of-type(1) {
+  margin-left: 0;
+}
+
+.wrapper .mainsummary div p:nth-of-type(1) {
+  font-size: 28px;
+  font-family: roboto-black;
+}
+
+.wrapper .mainsummary div p:nth-of-type(1) img {
+  float: left;
+  margin-right: 20px;
+  width: 40px;
+  height: 40px;
+}
+
+.wrapper .mainsummary div p:nth-of-type(1) .description {
+  font-family: roboto-thin;
+}
+
+.wrapper .divider {
+  margin: 20px 0;
+  padding: 0;
+  background-color: #eeeeee;
+  height: 1px;
+}
+
+.wrapper .meta,
+.wrapper .objetivo {
+  padding: 0 20px;
+  position: relative;
+  text-align: center;
+}
+
+.wrapper .meta img,
+.wrapper .objetivo img {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 0;
+  margin-right: 35px;
+  padding: 6px;
+  border-radius: 12px;
+  background-color: white;
+  float: right;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.wrapper .meta img:hover,
+.wrapper .objetivo img:hover {
+  background-color: #86af49;
+}
+
+.wrapper .meta img:nth-of-type(2),
+.wrapper .objetivo img:nth-of-type(2) {
+  margin-right: 75px;
+}
+
+.wrapper .meta .holder,
+.wrapper .objetivo .holder {
+  padding: 20px 0;
+  background-color: #eeeeee;
+  -webkit-transition: background-color ease 0.5s;
+  transition: background-color ease 0.5s;
+}
+
+.wrapper .meta .holder p,
+.wrapper .objetivo .holder p {
+  font-family: roboto-black;
+  font-size: 22px;
+}
+
+.wrapper .meta .holder .graph,
+.wrapper .objetivo .holder .graph {
+  text-align: center;
+  height: 250px;
+}
+
+.wrapper .meta .holder:hover,
+.wrapper .objetivo .holder:hover {
+  background-color: rgba(134, 175, 73, 0.3);
+  cursor: pointer;
+}
+
+.wrapper .objetivo .holder p {
+  width: 100%;
+  font-size: 22px;
+}
+
+.wrapper .objetivo .holder p:nth-of-type(1) {
+  font-family: roboto-bold;
+  font-weight: bolder;
+  margin-right: 20px;
+  text-align: center;
+}
+
+.wrapper .objetivo .holder p:nth-of-type(2) {
+  text-align: center;
+  font-family: roboto-thin;
+  padding: 0 20px;
+}
+
+.wrapper .objetivo .holder span {
+  color: #86af49;
+  font-family: roboto-black;
+  position: absolute;
+  left: 0;
+  font-size: 22px;
+  margin-left: 35px;
+}
+
+.wrapper .objetivo .holder .graph {
+  text-align: center;
+  height: 250px;
+}
+
+.wrapper .objetivo .holder:hover {
+  background-color: rgba(134, 175, 73, 0.3);
+  cursor: pointer;
+}
+/*# sourceMappingURL=dashboard.css.map */
