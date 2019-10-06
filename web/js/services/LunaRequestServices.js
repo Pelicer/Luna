@@ -156,4 +156,43 @@ function RenderGoals_Request() {
     xhr.send(envelope);
 }
 
+function DeleteGoal_Request(GoalID) {
+    var xhr = GetRequestObject("DeleteGoal");
+    var envelope = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">' +
+        '<soapenv:Header/>' +
+        '<soapenv:Body>' +
+        '<tem:DeleteGoal>' +
+        '<tem:GoalID>{GOALID}</tem:GoalID>' +
+        '</tem:DeleteGoal>' +
+        '</soapenv:Body>' +
+        '</soapenv:Envelope>';
+    envelope = envelope.replace("{GOALID}", GoalID);
+    xhr.onreadystatechange = function () {
+        DeleteGoal_Callback(xhr);
+    };
+    CloseModal();
+    xhr.send(envelope);
+}
+
+function RegisterTransaction_Request(GoalID, Action, Value) {
+    var xhr = GetRequestObject("RegisterTransaction");
+    var envelope = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">' +
+        '<soapenv:Header/>' +
+        '<soapenv:Body>' +
+        '<tem:RegisterTransaction>' +
+        '<tem:GoalID>{GOALID}</tem:GoalID>' +
+        '<tem:Action>{ACTION}</tem:Action>' +
+        '<tem:Value>{VALUE}</tem:Value>' +
+        '</tem:RegisterTransaction>' +
+        '</soapenv:Body>' +
+        '</soapenv:Envelope>';
+    envelope = envelope.replace("{GOALID}", GoalID);
+    envelope = envelope.replace("{ACTION}", Action);
+    envelope = envelope.replace("{VALUE}", Value);
+    xhr.onreadystatechange = function () {
+        RegisterTransaction_Callback(xhr);
+    };
+    CloseModal();
+    xhr.send(envelope);
+}
 GetServicesConfig();

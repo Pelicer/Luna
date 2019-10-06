@@ -55,7 +55,20 @@ html {
 }
 
 .wrapper .mainchart {
+  font-family: roboto-thin;
+  font-size: 1.4rem;
   grid-column: span 2;
+  padding: 10px 20px;
+}
+
+.wrapper .mainchart p {
+  padding: 10px 0;
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper .mainchart {
+    grid-column: span 4;
+  }
 }
 
 .wrapper .mainsummary {
@@ -64,20 +77,42 @@ html {
   margin: 0;
 }
 
+@media screen and (max-width: 992px) {
+  .wrapper .mainsummary {
+    grid-column: span 4;
+  }
+}
+
+.wrapper .mainsummary h3 {
+  height: 10%;
+}
+
 .wrapper .mainsummary h3 span {
   font-family: roboto-black;
   color: #86af49;
 }
 
 .wrapper .mainsummary div {
-  margin: 5px 0px;
+  width: 100%;
   background-color: #eeeeee;
   padding: 20px;
   float: left;
+  height: 40%;
+  -webkit-transition: background-color ease 0.5s;
+  transition: background-color ease 0.5s;
 }
 
 .wrapper .mainsummary div:nth-of-type(1) {
-  margin-left: 0;
+  margin-bottom: 8px;
+}
+
+.wrapper .mainsummary div:nth-of-type(2) {
+  width: 49.5%;
+}
+
+.wrapper .mainsummary div:nth-of-type(3) {
+  width: 49.5%;
+  margin-left: 8px;
 }
 
 .wrapper .mainsummary div p:nth-of-type(1) {
@@ -96,11 +131,52 @@ html {
   font-family: roboto-thin;
 }
 
+.wrapper .mainsummary div:hover {
+  background-color: rgba(134, 175, 73, 0.3);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper .mainsummary div {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-top: 8px;
+    margin-bottom: 0 !important;
+  }
+}
+
 .wrapper .divider {
   margin: 20px 0;
   padding: 0;
   background-color: #eeeeee;
   height: 1px;
+}
+
+.wrapper .metas,
+.wrapper .objetivos {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(400px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-column: span 4;
+}
+
+.wrapper .metas .infodata,
+.wrapper .objetivos .infodata {
+  grid-column: unset;
+  text-align: center;
+}
+
+.wrapper .metas .infodata img,
+.wrapper .objetivos .infodata img {
+  height: 40px;
+}
+
+.wrapper .metas .infodata p,
+.wrapper .objetivos .infodata p {
+  font-family: roboto-regular;
+  margin-top: 10px;
+  cursor: pointer;
 }
 
 .wrapper .meta,
@@ -159,6 +235,13 @@ html {
 .wrapper .objetivo .holder:hover {
   background-color: rgba(134, 175, 73, 0.3);
   cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper .meta,
+  .wrapper .objetivo {
+    margin-top: 20px;
+  }
 }
 
 .wrapper .objetivo .holder p {

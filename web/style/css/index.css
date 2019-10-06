@@ -211,7 +211,6 @@ header .navbar ul:nth-of-type(2) .active {
   left: 100%;
   -webkit-transition: opacity 0.3s;
   transition: opacity 0.3s;
-  margin-top: -25px;
   font-size: 14px;
 }
 
@@ -261,6 +260,7 @@ header .navbar ul:nth-of-type(2) .active {
 @media screen and (max-width: 768px) {
   .content {
     margin-left: 50px;
+    padding-left: 0;
   }
 }
 

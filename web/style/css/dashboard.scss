@@ -20,25 +20,47 @@ html {
     grid-column: span 4;
   }
   .mainchart {
+    font-family: roboto-thin;
+    font-size: 1.4rem;
     grid-column: span 2;
+    padding: 10px 20px;
+    p {
+      padding: 10px 0;
+    }
+    @media screen and (max-width: 992px) {
+      grid-column: span 4;
+    }
   }
   .mainsummary {
     grid-column: span 2;
     width: 100%;
     margin: 0;
+    @media screen and (max-width: 992px) {
+      grid-column: span 4;
+    }
     h3 {
+      height: 10%;
       span {
         font-family: roboto-black;
         color: $Greenery;
       }
     }
     div {
-      margin: 5px 0px;
+      width: 100%;
       background-color: #eeeeee;
       padding: 20px;
       float: left;
+      height: 40%;
+      transition: background-color ease 0.5s;
       &:nth-of-type(1) {
-        margin-left: 0;
+        margin-bottom: 8px;
+      }
+      &:nth-of-type(2) {
+        width: 49.5%;
+      }
+      &:nth-of-type(3) {
+        width: 49.5%;
+        margin-left: 8px;
       }
       p:nth-of-type(1) {
         img {
@@ -53,6 +75,16 @@ html {
         font-size: 28px;
         font-family: roboto-black;
       }
+      &:hover {
+        background-color: rgba(134, 175, 73, 0.3);
+        cursor: pointer;
+      }
+      @media screen and (max-width: 992px) {
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-top: 8px;
+        margin-bottom: 0 !important;
+      }
     }
   }
   .divider {
@@ -60,6 +92,24 @@ html {
     padding: 0;
     background-color: #eeeeee;
     height: 1px;
+  }
+  .metas,
+  .objetivos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-column: span 4;
+    .infodata {
+      grid-column: unset;
+      text-align: center;
+      img {
+        height: 40px;
+      }
+      p {
+        font-family: roboto-regular;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+    }
   }
   .meta,
   .objetivo {
@@ -103,7 +153,9 @@ html {
         cursor: pointer;
       }
     }
-
+    @media screen and (max-width: 768px) {
+      margin-top: 20px;
+    }
   }
   .objetivo {
     .holder {

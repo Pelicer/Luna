@@ -223,5 +223,63 @@ namespace LunaCore
             return mReturn;
         }
 
+        public DSLDataType DeleteGoal(int GoalID)
+        {
+            DSLDataType mReturn = new DSLDataType();
+            try
+            {
+                if (GoalID <= 0)
+                {
+                    mReturn.BoolValue = false;
+                    mReturn.Value = "Por favor, forneça uma meta ou objetivo válido";
+                    return mReturn;
+                }
+
+                mReturn = FinDAO.DeleteGoal(GoalID);
+
+            }
+            catch (Exception e)
+            {
+                mReturn.BoolValue = false;
+                mReturn.Value = e.Message.ToString();
+            }
+            return mReturn;
+        }
+
+        public DSLDataType RegisterTransaction(int GoalID, string Action, float Value)
+        {
+            DSLDataType mReturn = new DSLDataType();
+            try
+            {
+                if (GoalID <= 0)
+                {
+                    mReturn.BoolValue = false;
+                    mReturn.Value = "Por favor, insira um objetivo ou meta válidos";
+                    return mReturn;
+                }
+                if (Action == null || Action.Equals(String.Empty))
+                {
+                    mReturn.BoolValue = false;
+                    mReturn.Value = "Por favor, forneça uma ação";
+                    return mReturn;
+                }
+                if (Value <= 0)
+                {
+                    mReturn.BoolValue = false;
+                    mReturn.Value = "Um valor deve ser fornecido";
+                    return mReturn;
+                }
+
+                mReturn = FinDAO.RegisterTransaction(GoalID, Action.ToUpper(), Value);
+
+            }
+            catch (Exception e)
+            {
+                mReturn.BoolValue = false;
+                mReturn.Value = e.Message.ToString();
+            }
+            return mReturn;
+        }
+
     }
 }

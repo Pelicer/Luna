@@ -34,5 +34,13 @@ namespace LunaCore
         [OperationContract]
         [WebInvoke(UriTemplate = "/GetGoals", Method = "POST", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Xml)]
         DSLDataType GetGoals(string Email);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "/DeleteGoal", Method = "POST", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Xml)]
+        DSLDataType DeleteGoal(int GoalID);
+
+        [OperationContract]
+        [WebInvoke(UriTemplate = "/RegisterTransaction", Method = "POST", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Xml)]
+        DSLDataType RegisterTransaction(int GoalID, string Action, float Value);
     }
 }

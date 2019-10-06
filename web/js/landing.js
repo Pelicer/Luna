@@ -6,18 +6,20 @@ document.addEventListener("DOMContentLoaded", function () {
         var responseBar = document.getElementsByClassName("qCommunication")[0];
         responseBar.innerText = DSL;
         responseBar.style.display = "block";
-        if(IsError === "true"){
+        if (IsError === "true") {
             responseBar.classList.add("error");
         }
     }
 
     var PasswordField = document.getElementById("password");
-    PasswordField.addEventListener("keyup", function(event){
-        if(event.keyCode == 13){
-            event.preventDefault();
-            Login();
-        }
-    })
+    if (PasswordField !== null) {
+        PasswordField.addEventListener("keyup", function (event) {
+            if (event.keyCode == 13) {
+                event.preventDefault();
+                Login();
+            }
+        })
+    }
 });
 
 function ShowPassword(ImgElement) {

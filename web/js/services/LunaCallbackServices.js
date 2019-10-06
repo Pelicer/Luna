@@ -153,9 +153,50 @@ function RenderGoals_Callback(xhr) {
     if (xhr.readyState == 4) {
         var DSL = GetRequestReponse(xhr.responseXML)
         if (DSL.BoolValue == "true") {
-            var Goals = JSON.parse(DSL.Value);
-            console.log(Goals);
-            RenderGoals(Goals.Goals);
+            if (DSL.Value.indexOf("{") == -1) {
+                Goals = DSL.Value.toString();
+                RenderGoals(Goals);
+            } else {
+                var Goals = JSON.parse(DSL.Value);
+                RenderGoals(Goals.Goals);
+            }
+        } else {
+
         }
     }
+}
+
+function DeleteGoal_Callback(xhr) {
+    if (xhr.readyState == 4) {
+        var userInfo = document.getElementsByClassName("userInfo")[0];
+        CloseModal();
+        var DSL = GetRequestReponse(xhr.responseXML)
+        if (DSL.BoolValue == "true") {
+            userInfo.innerText = DSL.Value;
+            userInfo.style.display = "block";
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+            RenderGoals_Request();
+            setTimeout(function () {
+                userInfo.style.display = "none";
+            }, 5000)
+        }
+    }
+}
+
+function RegisterTransaction_Callback(xhr) {
+    if (xhr.readyState == 4) {
+        var userInfo = document.getElementsByClassName("userInfo")[0];
+        CloseModal();
+        var DSL = GetRequestReponse(xhr.responseXML)
+        if (DSL.BoolValue == "true") {
+            userInfo.innerText = DSL.Value;
+            userInfo.style.display = "block";
+            $('html, body').animate({ scrollTop: 0 }, 'fast');
+            RenderGoals_Request();
+            setTimeout(function () {
+                userInfo.style.display = "none";
+            }, 5000)
+        }
+    }
+
 }

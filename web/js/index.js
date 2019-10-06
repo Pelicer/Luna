@@ -85,32 +85,6 @@ function ShowMenu(icon) {
     }
 }
 
-function ShowModal(Page) {
-    var url = Page + ".html";
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", url, true);
-    xhr.setRequestHeader('Content-type', 'text/html');
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            if (xhr.status == 200) {
-                var modal = document.getElementById("ModalContent");
-                modal.innerHTML = xhr.responseText;
-                modal.style.display = "flex";
-                if (Page == "View/modal/NewMeta" || Page == "View/modal/NewObjective") {
-                    GetCategories_Request(modal.getElementsByTagName("select")[0]);
-                }
-                LoadGoalSummary();
-            }
-        }
-    };
-    xhr.send();
-}
-
-function CloseModal() {
-    var modal = document.getElementById("ModalContent");
-    modal.style.display = "none";
-}
-
 document.addEventListener("DOMContentLoaded", function () {
     LoadModule("dashboard");
 });

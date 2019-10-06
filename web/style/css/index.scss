@@ -156,7 +156,6 @@ header {
       left: 100%;
       -webkit-transition: opacity 0.3s;
       transition: opacity 0.3s;
-      margin-top: -25px;
       font-size: 14px;
     }
 
@@ -198,6 +197,7 @@ header {
   padding-right: 50px;
   @media screen and (max-width: 768px) {
     margin-left: 50px;
+    padding-left: 0;
   }
 }
 .loading {

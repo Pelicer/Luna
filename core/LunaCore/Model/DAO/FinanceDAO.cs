@@ -72,6 +72,62 @@ namespace LunaCore.Model.DAO
             return mReturn;
         }
 
+        public DSLDataType DeleteGoal(int GoalID)
+        {
+            DSLDataType mReturn = new DSLDataType();
+            try
+            {
+                List<SqlParameter> sParams = new List<SqlParameter>();
+                sParams.Add(new SqlParameter("@GoalID", GoalID));
+
+                DSLDataType dbReturn = dbHelper.ExecuteStoredProcedure("fin.DeleteGoal", sParams);
+                if (dbReturn.BoolValue)
+                {
+                    mReturn = dbHelper.ValidateReturn((DataTable)dbReturn.Value);
+                }
+                else
+                {
+                    throw new SystemException(dbReturn.Value.ToString());
+                }
+
+            }
+            catch (Exception e)
+            {
+                mReturn.BoolValue = false;
+                mReturn.Value = e.Message.ToString();
+            }
+            return mReturn;
+        }
+
+        public DSLDataType RegisterTransaction(int GoalID, string Action, float Value)
+        {
+            DSLDataType mReturn = new DSLDataType();
+            try
+            {
+                List<SqlParameter> sParams = new List<SqlParameter>();
+                sParams.Add(new SqlParameter("@GoalID", GoalID));
+                sParams.Add(new SqlParameter("@Action", Action));
+                sParams.Add(new SqlParameter("@Value", Value));
+
+                DSLDataType dbReturn = dbHelper.ExecuteStoredProcedure("fin.RegisterTransaction", sParams);
+                if (dbReturn.BoolValue)
+                {
+                    mReturn = dbHelper.ValidateReturn((DataTable)dbReturn.Value);
+                }
+                else
+                {
+                    throw new SystemException(dbReturn.Value.ToString());
+                }
+
+            }
+            catch (Exception e)
+            {
+                mReturn.BoolValue = false;
+                mReturn.Value = e.Message.ToString();
+            }
+            return mReturn;
+        }
+
         public DSLDataType GetCategories()
         {
             DSLDataType mReturn = new DSLDataType();
@@ -131,6 +187,8 @@ namespace LunaCore.Model.DAO
 	                    LEFT JOIN [fin].Action AS act ON glt.ActionID = act.ActionID
                     WHERE
 	                    gl.UserID = (SELECT usr.UserID FROM usr.Users AS usr WHERE usr.Email = '" + Email + @"')
+                    AND
+                        gl.isActive = 1
                     ORDER BY 'GoalID' ASC;
                 ");
                 DSLDataType dbReturn = dbHelper.ExecuteQuery(Query);
@@ -148,7 +206,7 @@ namespace LunaCore.Model.DAO
                     DataRow[] dr = dtData.Select();
                     if (dr.Length <= 0)
                     {
-                        mReturn.BoolValue = false;
+                        mReturn.BoolValue = true;
                         mReturn.Value = "Nenhuma meta ou objetivo encontrado para o usuário";
                         return mReturn;
                     }

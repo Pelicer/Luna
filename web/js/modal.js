@@ -1,3 +1,34 @@
+
+function ShowModal(Page, GoalID, Operation) {
+    var url = Page + ".html";
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.setRequestHeader('Content-type', 'text/html');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+            if (xhr.status == 200) {
+                var modal = document.getElementById("ModalContent");
+                modal.innerHTML = xhr.responseText;
+                modal.style.display = "flex";
+                switch (Page) {
+                    case "View/modal/NewMeta", "View/modal/NewObjective":
+                        GetCategories_Request(modal.getElementsByTagName("select")[0]);
+                        break;
+                    case "View/modal/Confirmation", "View/modal/AddAmount":
+                        modal.setAttribute("GoalID", GoalID);
+                        modal.setAttribute("Operation", Operation)
+                }
+            }
+        }
+    };
+    xhr.send();
+}
+
+function CloseModal() {
+    var modal = document.getElementById("ModalContent");
+    modal.style.display = "none";
+}
+
 function ValidateModalFields(modal) {
     switch (modal) {
         case "meta":
@@ -108,8 +139,26 @@ function ValidateModalFields(modal) {
                 Amount.style.border = "1px solid rgba(138, 154, 154, 0.4)";
                 var Warning = document.getElementById("AmountWarning");
                 Warning.style.display = "none";
+                return true;
             }
             break;
     }
 
+}
+
+function TakeAction(modal) {
+    var GoalID = modal.getAttribute("goalid");
+    var Operation = modal.getAttribute("operation");
+
+    switch (Operation) {
+        case "delete":
+            DeleteGoal_Request(GoalID);
+            break;
+        case "ADD":
+            if (ValidateModalFields('add')) {
+                var Amount = document.getElementById("Amount");
+                RegisterTransaction_Request(GoalID, 'ADD', Amount.value);
+            }
+            break;
+    }
 }
