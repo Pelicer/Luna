@@ -124,6 +124,40 @@ namespace LunaCore.Model.DAO
             return mReturn;
         }
 
+        public DSLDataType UpdateUser(string OldEmail, string NewEmail, string NewPassword, string NewProfileValue)
+        {
+            DSLDataType mReturn = new DSLDataType();
+            try
+            {
+                string Salt = Criptography.GenerateSalt();
+                NewPassword = Criptography.sha256encrypt(NewPassword + Salt);
 
+                List<SqlParameter> sParams = new List<SqlParameter>
+                {
+                    new SqlParameter("@OldEmail", OldEmail),
+                    new SqlParameter("@Email", NewEmail),
+                    new SqlParameter("@Password", NewPassword),
+                    new SqlParameter("@ProfileValue", NewProfileValue),
+                    new SqlParameter("@Salt", Salt)
+                };
+
+                DSLDataType dbReturn = dbHelper.ExecuteStoredProcedure("usr.UpdateUser", sParams);
+                if (dbReturn.BoolValue)
+                {
+                    mReturn = dbHelper.ValidateReturn((DataTable)dbReturn.Value);
+                }
+                else
+                {
+                    throw new SystemException(dbReturn.Value.ToString());
+                }
+
+            }
+            catch (Exception e)
+            {
+                mReturn.BoolValue = false;
+                mReturn.Value = e.Message.ToString();
+            }
+            return mReturn;
+        }
     }
 }

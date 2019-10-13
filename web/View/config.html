@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="/style/css/config.css">
+<link rel="stylesheet" type="text/css" href="/style/css/landing.css">
 
 <div class="container-fluid wrapper">
     <div class="title">
@@ -9,12 +10,14 @@
         <!--Email elements-->
         <label for="user">E-Mail: </label>
         <label id="email-tooltip">Este e-mail não é válido</label>
+        <p class="warning" id="EmailWarning">Por favor, insira um email</p>
         <img id="email-checked" isvisible="False" class="checked" src="style/content/icon/checked.png">
         <input value="willpelicer@gmail.com" onfocusout="CheckEmail(this)" id="user" type="email" class="form-control"
             placeholder="seuemail@provedor.com">
 
         <!--Password elements-->
         <label for="password">Mudar de senha: </label>
+        <p class="warning" id="PasswordWarning">Por favor, insira uma senha</p>
         <img onClick="ShowPassword(this)" isvisible="False" class="input-icon" src="style/content/icon/view_on.png">
         <input onkeyup="CheckPasswordStrenth(this)" name="password" id="password" type="password" class="form-control">
 
@@ -24,8 +27,17 @@
         </div>
 
         <label for="password">Digite sua senha novamente: </label>
+        <p class="warning" id="CheckPasswordWarning">Por favor, confirme sua senha</p>
         <input onkeydown="BlockPaste()" id="checkpassword" id="checkpassword" type="password" class="form-control">
-        <button id="login-btn">Registrar</button>
+
+        <label for="profile">Escolha seu perfil:</label>
+        <p class="warning" id="ProfileWarning">Por favor, selecione um perfil</p>
+        <select class="form-control" name="profiles" id="profiles">
+            <option>Selecione</option>
+        </select>
+
+        <button id="login-btn" onClick="UpdateUser()">Registrar</button>
+
     </div>
 </div>
 </div>

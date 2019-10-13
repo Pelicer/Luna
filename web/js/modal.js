@@ -10,6 +10,16 @@ function ShowModal(Page, GoalID, Operation) {
                 var modal = document.getElementById("ModalContent");
                 modal.innerHTML = xhr.responseText;
                 modal.style.display = "flex";
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+                window.onkeyup = function (event) {
+                    if (event.which == 27 || event.keyCode == 27) {
+                        modal.style.display = "none";
+                    }
+                }
                 switch (Page) {
                     case "View/modal/NewMeta", "View/modal/NewObjective":
                         GetCategories_Request(modal.getElementsByTagName("select")[0]);
@@ -17,6 +27,33 @@ function ShowModal(Page, GoalID, Operation) {
                     case "View/modal/Confirmation", "View/modal/AddAmount":
                         modal.setAttribute("GoalID", GoalID);
                         modal.setAttribute("Operation", Operation)
+                    case "View/modal/GoalDetailsModal":
+
+                        var Goal = GetGoalByID(GoalID);
+                        modal.setAttribute("GoalID", GoalID);
+
+                        var FinalQty = document.getElementById("goaltotal");
+                        FinalQty.innerText = "R$ " + Goal.FinalValue;
+                        var Saved = document.getElementById("goalsaved");
+                        Saved.innerText = "R$ " + Goal.Accumulated;
+                        var Remaining = document.getElementById("goalremaining");
+                        Remaining.innerText = "R$ " + (Goal.FinalValue - Goal.Accumulated);
+
+                        var History = document.getElementById("transactions");
+                        for (var i = 0; i < Goal.Transactions.length; i++) {
+                            var p = document.createElement("p");
+                            var icon = document.createElement("img");
+                            icon.src = "style/content/icon/up.png";
+                            p.appendChild(icon);
+                            p.append("R$ " + Goal.Transactions[i].Value);
+                            var Timestamp = document.createElement("span");
+                            Timestamp.innerText = Goal.Transactions[i].Timestamp;
+                            p.appendChild(Timestamp);
+                            History.appendChild(p);
+                        }
+
+                        RenderMainGoal(GoalID, 'progresschart');
+
                 }
             }
         }

@@ -12,6 +12,10 @@ namespace LunaCore
         DSLDataType RegisterUser(string email, string password, string profile);
 
         [OperationContract]
+        [WebInvoke(UriTemplate = "/RegisterUser", Method = "POST", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Xml)]
+        DSLDataType UpdateUser(string OldEmail, string email, string password, string profile);
+
+        [OperationContract]
         [WebInvoke(UriTemplate = "/GetProfiles", Method = "POST", BodyStyle = WebMessageBodyStyle.Bare, RequestFormat = WebMessageFormat.Xml)]
         DSLDataType GetProfiles();
 

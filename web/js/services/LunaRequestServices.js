@@ -1,4 +1,6 @@
 var config = {};
+var Goals = {};
+
 function GetServicesConfig() {
     var xhr = new XMLHttpRequest();
     xhr.open("GET", "../config/config.json", true);
@@ -19,7 +21,7 @@ function GetRequestObject(WSFunction) {
 }
 
 function RegisterUser_Request(Email, Password, Profile) {
-    var xhr = GetRequestObject(config.LunaServices.Methods.RegisterUser);
+    var xhr = GetRequestObject("RegisterUser");
     var envelope = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">' +
         '<soapenv:Header/>' +
         '<soapenv:Body>' +
@@ -35,6 +37,29 @@ function RegisterUser_Request(Email, Password, Profile) {
     envelope = envelope.replace("{PROFILE}", Profile);
     xhr.onreadystatechange = function () {
         RegisterUser_Callback(this);
+    };
+    xhr.send(envelope);
+}
+
+function UpdateUser_Request(Email, Password, Profile) {
+    var xhr = GetRequestObject("UpdateUser");
+    var envelope = '<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">' + 
+    '<soapenv:Header/>' +
+        '<soapenv:Body>' +
+        '<tem:UpdateUser>' +
+        '<tem:OldEmail>{OLDEMAIL}</tem:OldEmail>' +
+        '<tem:email>{NEWEMAIL}</tem:email>' +
+        '<tem:password>{PASSWORD}</tem:password>' +
+        '<tem:profile>{PROFILE}</tem:profile>' +
+        '</tem:UpdateUser>' +
+        '</soapenv:Body>' +
+        '</soapenv:Envelope>';
+    envelope = envelope.replace("{OLDEMAIL}", sessionStorage.getItem("email"));
+    envelope = envelope.replace("{NEWEMAIL}", Email);
+    envelope = envelope.replace("{PASSWORD}", Password);
+    envelope = envelope.replace("{PROFILE}", Profile);
+    xhr.onreadystatechange = function () {
+        UpdateUser_Callback(this);
     };
     xhr.send(envelope);
 }

@@ -23,19 +23,19 @@ function LoadMainGoal(Goal) {
     FinalDate.innerText = FinalYear;
 
     var Total = GoalData.getElementsByClassName("total")[0];
-    Total.setAttribute("onClick", "ShowModal('View/modal/GoalDetailsModal')");
+    Total.setAttribute("onclick", "ShowModal('View/modal/GoalDetailsModal', " + Goal.ID + ")");
     while (Total.firstChild) {
         Total.removeChild(Total.firstChild)
     }
 
     var Achieved = GoalData.getElementsByClassName("achieved")[0];
-    Achieved.setAttribute("onClick", "ShowModal('View/modal/GoalDetailsModal')");
+    Achieved.setAttribute("onclick", "ShowModal('View/modal/GoalDetailsModal', " + Goal.ID + ")");
     while (Achieved.firstChild) {
         Achieved.removeChild(Achieved.firstChild)
     }
 
     var Remaining = GoalData.getElementsByClassName("remaining")[0];
-    Remaining.setAttribute("onClick", "ShowModal('View/modal/GoalDetailsModal')");
+    Remaining.setAttribute("onclick", "ShowModal('View/modal/GoalDetailsModal', " + Goal.ID + ")");
     while (Remaining.firstChild) {
         Remaining.removeChild(Remaining.firstChild)
     }
@@ -79,52 +79,57 @@ function LoadMainGoal(Goal) {
     Remaining.appendChild(RemainingDescription);
 
     if (Goal.Transactions.length > 0) {
-        var TransactionCategories = [];
-        var TransactionValues = [];
-
-        for (var i = 0; i < Goal.Transactions.length; i++) {
-            TransactionCategories.push(Goal.Transactions[i].Timestamp);
-            TransactionValues.push(Goal.Transactions[i].Value);
-        }
-
-        var chart = Highcharts.chart('maingoal', {
-            chart: {
-                type: 'line'
-            },
-            title: {
-                text: ''
-            },
-            xAxis: {
-                categories: TransactionCategories
-            },
-            yAxis: {
-                title: {
-                    text: 'R$'
-                }
-            },
-            plotOptions: {
-                line: {
-                    dataLabels: {
-                        enabled: true
-                    },
-                    enableMouseTracking: false
-                }
-            },
-            credits: {
-                enabled: false
-            },
-            series: [{
-                name: Goal.Title,
-                data: TransactionValues
-            }]
-        });
-        chart.reflow();
+        RenderMainGoal(Goal.ID, 'maingoal')
     } else {
         var NoTransactions = document.createElement("p");
         NoTransactions.innerText = "Não há transações registradas para este objetivo";
         var ChartDiv = document.getElementById("maingoal");
         ChartDiv.appendChild(NoTransactions);
     }
+}
+
+function RenderMainGoal(GoalID, ElementID) {
+    var Goal = GetGoalByID(GoalID);
+    var TransactionCategories = [];
+    var TransactionValues = [];
+
+    for (var i = 0; i < Goal.Transactions.length; i++) {
+        TransactionCategories.push(Goal.Transactions[i].Timestamp);
+        TransactionValues.push(Goal.Transactions[i].Value);
+    }
+
+    var chart = Highcharts.chart(ElementID, {
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: ''
+        },
+        xAxis: {
+            categories: TransactionCategories
+        },
+        yAxis: {
+            title: {
+                text: 'R$'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: false
+            }
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: Goal.Title,
+            data: TransactionValues
+        }]
+    });
+    chart.reflow();
 }
 
 
@@ -146,17 +151,16 @@ function RenderGoals(Goals) {
         DeleteButton.src = "style/content/icon/garbage_black.png";
         DeleteButton.setAttribute("onmouseover", "ImageHover(this, 'garbage')");
         DeleteButton.setAttribute("onmouseout", "ImageUnhover(this, 'garbage')");
-        DeleteButton.setAttribute("onClick", "ShowModal('View/modal/Confirmation', " + Goal.ID + ", 'delete')");
+        DeleteButton.setAttribute("onclick", "ShowModal('View/modal/Confirmation', " + Goal.ID + ")")
 
         var AddButton = document.createElement("img");
         AddButton.src = "style/content/icon/plus_black.png";
         AddButton.setAttribute("onmouseover", "ImageHover(this, 'plus')");
         AddButton.setAttribute("onmouseout", "ImageUnhover(this, 'plus')");
-        AddButton.setAttribute("onClick", "ShowModal('View/modal/AddAmount')");
-        AddButton.setAttribute("onClick", "ShowModal('View/modal/AddAmount', " + Goal.ID + ", 'ADD')");
+        AddButton.setAttribute("onclick", "ShowModal('View/modal/AddAmount', " + Goal.ID + ")")
 
         var Info = document.createElement("div");
-        Info.setAttribute("onClick", "ShowModal('View/modal/GoalDetailsModal')");
+        Info.setAttribute("onClick", "ShowModal('View/modal/GoalDetailsModal', " + Goal.ID + ")");
         Info.classList.add("holder");
 
         var Title = document.createElement("p");
@@ -341,4 +345,15 @@ function RenderGraph(Goal) {
             chart.reflow();
             break;
     }
+}
+
+function GetGoalByID(GoalID) {
+    var Goal;
+    for (var i = 0; i < Goals.Goals.length; i++) {
+        if (Goals.Goals[i].ID == GoalID) {
+            Goal = Goals.Goals[i];
+            continue;
+        }
+    }
+    return Goal;
 }

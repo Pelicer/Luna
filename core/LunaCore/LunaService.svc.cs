@@ -49,6 +49,49 @@ namespace LunaCore
             return mReturn;
         }
 
+        public DSLDataType UpdateUser(string OldEmail, string email, string password, string profile)
+        {
+            DSLDataType mReturn = new DSLDataType();
+            try
+            {
+                if (OldEmail == null || OldEmail.Equals(String.Empty))
+                {
+                    mReturn.BoolValue = false;
+                    mReturn.Value = "O campo de e-mail não pode ser vazio";
+                    return mReturn;
+                }
+
+                if (email == null || email.Equals(String.Empty))
+                {
+                    mReturn.BoolValue = false;
+                    mReturn.Value = "O campo de e-mail não pode ser vazio";
+                    return mReturn;
+                }
+
+                if (password == null || password.Equals(String.Empty))
+                {
+                    mReturn.BoolValue = false;
+                    mReturn.Value = "O campo de senha não pode ser vazio";
+                    return mReturn;
+                }
+
+                if (profile == null || profile.Equals(String.Empty))
+                {
+                    mReturn.BoolValue = false;
+                    mReturn.Value = "O campo de perfil não pode ser vazio";
+                    return mReturn;
+                }
+
+                mReturn = UserDAO.UpdateUser(OldEmail.ToUpper(), email.ToUpper(), password, profile.ToUpper());
+            }
+            catch (Exception e)
+            {
+                mReturn.BoolValue = false;
+                mReturn.Value = e.Message.ToString();
+            }
+            return mReturn;
+        }
+
         public DSLDataType GetProfiles()
         {
             DSLDataType mReturn = new DSLDataType();
@@ -82,7 +125,6 @@ namespace LunaCore
             }
             return mReturn;
         }
-
 
         public DSLDataType Login(string email, string password)
         {

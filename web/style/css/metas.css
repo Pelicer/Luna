@@ -272,6 +272,20 @@
   background-color: #86af49;
 }
 
+.wrapper .datatable table td .ongoing {
+  background-color: yellow;
+}
+
+.wrapper .datatable table td span {
+  width: 33%;
+  padding: 0 10px;
+}
+
+.wrapper .datatable table td span:hover {
+  cursor: pointer;
+  color: #86af49;
+}
+
 .wrapper .datatable .info {
   margin: 0 auto;
   padding: 20px 0;

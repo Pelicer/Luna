@@ -51,6 +51,15 @@
   font-family: roboto-regular;
 }
 
+.wrapper .info .warning {
+  display: none;
+  font-size: 12px;
+  width: auto;
+  font-family: roboto-black;
+  color: red;
+  float: left;
+}
+
 .wrapper .info #password-info {
   text-align: center;
   display: none;

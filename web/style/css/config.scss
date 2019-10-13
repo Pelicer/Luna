@@ -15,7 +15,14 @@
     display: grid;
     grid-template-columns: 1fr;
     font-family: roboto-regular;
-
+    .warning {
+      display: none;
+      font-size: 12px;
+      width: auto;
+      font-family: roboto-black;
+      color: red;
+      float: left;
+    }
     #password-info {
       text-align: center;
       display: none;

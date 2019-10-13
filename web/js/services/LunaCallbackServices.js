@@ -34,6 +34,31 @@ function RegisterUser_Callback(xhr) {
     }
 }
 
+function UpdateUser_Callback(xhr) {
+    if (xhr.readyState == 4) {
+        if (CheckHttpError(xhr.status)) {
+            var qCommunication = document.getElementsByClassName("qCommunication")[0];
+            qCommunication.style.display = "block";
+            qCommunication.innerText = "Um erro inesperado ocorreu. Por favor, tente novamente";
+
+        } else if (xhr.status == 200) {
+            var DSL = GetRequestReponse(xhr.responseXML);
+
+            var userInfo = document.getElementsByClassName("userInfo")[0];
+            var DSL = GetRequestReponse(xhr.responseXML)
+            if (DSL.BoolValue == "true") {
+                userInfo.innerText = DSL.Value;
+                userInfo.style.display = "block";
+                $('html, body').animate({ scrollTop: 0 }, 'fast');
+                RenderGoals_Request();
+                setTimeout(function () {
+                    userInfo.style.display = "none";
+                }, 5000)
+            }
+        }
+    }
+}
+
 function GetProfiles_Callback(xhr) {
     if (xhr.readyState == 4) {
         if (CheckHttpError(xhr.status)) {
@@ -102,6 +127,11 @@ function Login_Callback(xhr) {
                 qCommunication.innerText = DSL.Value;
                 qCommunication.style.display = "block";
                 qCommunication.classList.add("error");
+
+                var LoginInput = document.getElementById("password");
+                LoginInput.value = "";
+                LoginInput.focus();
+
             }
         }
     }
@@ -157,7 +187,7 @@ function RenderGoals_Callback(xhr) {
                 Goals = DSL.Value.toString();
                 RenderGoals(Goals);
             } else {
-                var Goals = JSON.parse(DSL.Value);
+                Goals = JSON.parse(DSL.Value);
                 RenderGoals(Goals.Goals);
             }
         } else {

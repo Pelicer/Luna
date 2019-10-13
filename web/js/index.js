@@ -55,6 +55,12 @@ function LoadModule(page) {
                     case "dashboard":
                         RenderGoals_Request();
                         break;
+                    case "config":
+                        GetProfiles_Request();
+                        break;
+                    case "metas":
+                        LoadGoalsInTable();
+                        break;
                 }
             }
         }
