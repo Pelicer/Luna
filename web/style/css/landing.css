@@ -179,6 +179,18 @@
   background-color: #44883d !important;
 }
 
+#login .pwd {
+  position: relative;
+}
+
+#login .pwd .fa-eye {
+  cursor: pointer;
+  position: absolute;
+  color: #000;
+  right: 20px;
+  top: 10px;
+}
+
 #login .input-icon {
   width: 4%;
   padding: 10px 0;

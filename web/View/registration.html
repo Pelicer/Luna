@@ -4,6 +4,7 @@
     <meta charset="ISO-8859-1">
     <title>Luna</title>
     <link rel="stylesheet" type="text/css" href="../style/css/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../style/css/landing.css">
 </head>
 
@@ -43,10 +44,11 @@
                     <label for="password">Digite uma senha: </label>
                     <p class="warning" id="PasswordWarning">Por favor, insira uma senha</p>
                     <br>
-                    <img onClick="ShowPassword(this)" isvisible="False" class="input-icon"
-                        src="../style/content/icon/view_on.png">
-                    <input onkeyup="CheckPasswordStrenth(this)" name="password" id="password" type="password"
+                    <div class=pwd>
+                        <input onkeyup="CheckPasswordStrenth(this)" name="password" id="password" type="password"
                         class="form-control">
+                        <i onClick="ShowPassword(this)" class="fa fa-eye"></i>
+                    </div>
 
 
                     <div id="password-info">

@@ -8,17 +8,18 @@
     </div>
     <hr />
     <div class="taskbar">
-        <button class="filterbtn" onClick="FilterButton(this)">Metas</button>
-        <button class="filterbtn" onClick="FilterButton(this)">Objetivos</button>
+        <button class="filterbtn" onClick="FilterButton(this)">Meta</button>
+        <button class="filterbtn" onClick="FilterButton(this)">Objetivo</button>
         <div class="search">
             <label for="keywords">Palavra Chave:</label>
-            <input name="keywords" />
+            <input name="keywords" onkeyup="sortTable('keyword', null, this.value)"/>
         </div>
         <div class="status">
             <label for="types">Status:</label>
-            <select name="types">
+            <select name="types" onChange="sortTable('status', null, this.value)">
+                <option>Todos</option>
                 <option>Em andamento</option>
-                <option>Finalizados</option>
+                <option>Finalizado</option>
                 <option>Atrasado</option>
             </select>
         </div>
@@ -27,19 +28,19 @@
         <table>
             <tbody id="tablecontent">
                 <tr>
-                    <th>#</th>
-                    <th>Descrição</th>
-                    <th>Tipo</th>
-                    <th>Data Final</th>
-                    <th>Status</th>
-                    <th>Quantidade</th>
+                    <th onClick="sortTable('column', this, 0)">#</th>
+                    <th onClick="sortTable('column', this, 1)">Descrição</th>
+                    <th onClick="sortTable('column', this, 2)">Tipo</th>
+                    <th onClick="sortTable('column', this, 3)">Data Final</th>
+                    <th onClick="sortTable('column', this, 4)">Status</th>
+                    <th onClick="sortTable('column', this, 5)">Quantidade</th>
                     <th>Ações</th>
                 </tr>
             </tbody>
         </table>
         <div class="info">
             <img src="style/content/icon/filter.png" />
-            <label>3 resultados</label>
+            <label id="qtyFound">3 resultados</label>
         </div>
     </div>
 </div>

@@ -1,0 +1,634 @@
+@font-face {
+  font-family: roboto-regular;
+  src: url(../content/fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-thin;
+  src: url(../content/fonts/roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: roboto-black;
+  src: url(../content/fonts/roboto/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url(../content/fonts/roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: roboto-bold;
+  src: url(../content/fonts/roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: roboto-medium;
+  src: url(../content/fonts/roboto/Roboto-Medium.ttf);
+}
+
+#ModalContent {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#ModalContent .Content {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 2% 3%;
+  width: 80%;
+  height: auto;
+  overflow-x: auto;
+  border-radius: 5px;
+  border: 2px solid rgba(201, 200, 199, 0.4);
+}
+
+#ModalContent .Content::-webkit-scrollbar {
+  display: none;
+}
+
+#ModalContent .Content .close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#ModalContent .Content .close:hover,
+#ModalContent .Content .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#ModalContent .Content .GoalDetail h2 {
+  font-family: roboto-bold;
+  width: 100%;
+}
+
+#ModalContent .Content .GoalDetail .summary {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+#ModalContent .Content .GoalDetail .summary .summaryinfo {
+  text-align: center;
+  padding: 0 20px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+#ModalContent .Content .GoalDetail .summary .summaryinfo p:nth-of-type(1) {
+  font-family: roboto-black;
+  font-size: 1.5em;
+  padding-top: 20px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#ModalContent .Content .GoalDetail .summary .summaryinfo p:nth-of-type(2) {
+  font-family: roboto-regular;
+  font-size: 1.5em;
+  color: white;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#ModalContent .Content .GoalDetail .summary .total p:nth-of-type(1) {
+  color: #5f7278;
+}
+
+#ModalContent .Content .GoalDetail .summary .total p:nth-of-type(2) {
+  background-color: #5f7278;
+}
+
+#ModalContent .Content .GoalDetail .summary .saved p:nth-of-type(1) {
+  color: #86af49;
+}
+
+#ModalContent .Content .GoalDetail .summary .saved p:nth-of-type(2) {
+  background-color: #86af49;
+}
+
+#ModalContent .Content .GoalDetail .summary .remaining p:nth-of-type(1) {
+  color: #8a9a9a;
+}
+
+#ModalContent .Content .GoalDetail .summary .remaining p:nth-of-type(2) {
+  background-color: #8a9a9a;
+}
+
+@media screen and (max-width: 768px) {
+  #ModalContent .Content .GoalDetail .summary {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+}
+
+#ModalContent .Content .GoalDetail .data {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+}
+
+#ModalContent .Content .GoalDetail .data .progresschart {
+  width: 100%;
+  height: 500px;
+}
+
+@media screen and (max-width: 768px) {
+  #ModalContent .Content .GoalDetail .data .progresschart {
+    display: none;
+  }
+}
+
+#ModalContent .Content .GoalDetail .data .history {
+  margin: 0 20px;
+}
+
+#ModalContent .Content .GoalDetail .data .history p {
+  position: relative;
+  text-align: center;
+  padding: 15px;
+  font-size: 20px;
+  font-family: roboto-bold;
+}
+
+#ModalContent .Content .GoalDetail .data .history p:nth-of-type(even) {
+  background-color: rgba(134, 175, 73, 0.1);
+}
+
+#ModalContent .Content .GoalDetail .data .history p:nth-of-type(odd) {
+  background-color: rgba(95, 114, 120, 0.1);
+}
+
+#ModalContent .Content .GoalDetail .data .history p img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
+}
+
+#ModalContent .Content .GoalDetail .data .history p span {
+  margin-right: 10px;
+  position: absolute;
+  right: 0;
+  top: 2px;
+  font-family: roboto-regular;
+  font-size: 10px;
+  color: #5f7278;
+}
+
+@media screen and (max-width: 1200px) {
+  #ModalContent .Content .GoalDetail .data {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  #ModalContent .Content .GoalDetail .data img {
+    margin-left: 20px !important;
+  }
+  #ModalContent .Content .GoalDetail .data span {
+    font-size: 14px !important;
+  }
+  #ModalContent .Content .GoalDetail .data .history {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  #ModalContent .Content .GoalDetail .data {
+    padding: 5%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #ModalContent .Content .GoalDetail .data span {
+    font-size: 10px !important;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #ModalContent .Content .GoalDetail .data {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #ModalContent .Content .GoalDetail {
+    padding: 5%;
+  }
+}
+
+#ModalContent .Content .RegisterModal .choise h2 {
+  font-family: roboto-bold;
+}
+
+#ModalContent .Content .RegisterModal .choise .choises {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 20px;
+  -ms-grid-columns: 50% 50%;
+      grid-template-columns: 50% 50%;
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  grid-gap: 20px;
+}
+
+#ModalContent .Content .RegisterModal .choise .choises .item {
+  text-align: center;
+  height: 100%;
+  background-color: #eeeeee;
+  -webkit-transition: background-color ease 0.5s;
+  transition: background-color ease 0.5s;
+  cursor: pointer;
+}
+
+#ModalContent .Content .RegisterModal .choise .choises .item:hover {
+  background-color: white;
+}
+
+#ModalContent .Content .RegisterModal .choise .choises .item .design {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+  background-color: #5f7278;
+}
+
+#ModalContent .Content .RegisterModal .choise .choises .item .design .meta {
+  margin-top: 10%;
+  width: 150px;
+  height: 150px;
+}
+
+#ModalContent .Content .RegisterModal .choise .choises .item .design .objective {
+  width: 300px;
+  height: 300px;
+}
+
+#ModalContent .Content .RegisterModal .choise .choises .item h3 {
+  font-family: roboto-bold;
+  color: #5f7278;
+}
+
+#ModalContent .Content .RegisterModal .choise .choises .item p {
+  font-family: roboto-regular;
+  text-align: justify;
+  color: #5f7278;
+  padding: 30px;
+}
+
+@media screen and (max-width: 992px) {
+  #ModalContent .Content .RegisterModal .choise .choises {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+    -ms-grid-rows: 1fr;
+        grid-template-rows: 1fr;
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #ModalContent .Content {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 0;
+    padding-top: 0;
+  }
+}
+
+#ModalContent .NoBackground {
+  background-color: transparent;
+  margin: auto;
+  padding: 2% 3%;
+  width: 80%;
+  overflow-x: auto;
+  border-radius: 5px;
+  border: none;
+}
+
+#ModalContent .NoBackground .close {
+  color: white;
+}
+
+#ModalContent .Add,
+#ModalContent .Confirmation,
+#ModalContent .NewMeta,
+#ModalContent .NewObjective {
+  width: 500px;
+}
+
+#ModalContent .Add h2,
+#ModalContent .Confirmation h2,
+#ModalContent .NewMeta h2,
+#ModalContent .NewObjective h2 {
+  font-family: roboto-black;
+  font-size: 1.5rem;
+}
+
+#ModalContent .Add hr,
+#ModalContent .Confirmation hr,
+#ModalContent .NewMeta hr,
+#ModalContent .NewObjective hr {
+  background-color: #5f7278;
+}
+
+#ModalContent .Add .tooltiptext,
+#ModalContent .Confirmation .tooltiptext,
+#ModalContent .NewMeta .tooltiptext,
+#ModalContent .NewObjective .tooltiptext {
+  font-family: roboto-regular;
+  visibility: hidden;
+  width: 230px;
+  background-color: #555;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  left: 165px;
+  z-index: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  margin-top: -25px;
+  font-size: 14px;
+}
+
+#ModalContent .Add .tooltiptext::after,
+#ModalContent .Confirmation .tooltiptext::after,
+#ModalContent .NewMeta .tooltiptext::after,
+#ModalContent .NewObjective .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 15%;
+  right: 100%;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-right: 5px solid #555;
+}
+
+#ModalContent .Add label,
+#ModalContent .Confirmation label,
+#ModalContent .NewMeta label,
+#ModalContent .NewObjective label {
+  font-family: roboto-regular;
+  margin-top: 10px;
+  position: relative;
+}
+
+#ModalContent .Add label img,
+#ModalContent .Confirmation label img,
+#ModalContent .NewMeta label img,
+#ModalContent .NewObjective label img {
+  margin-left: 5px;
+  width: 12px;
+  height: 12px;
+}
+
+#ModalContent .Add label:hover .tooltiptext,
+#ModalContent .Confirmation label:hover .tooltiptext,
+#ModalContent .NewMeta label:hover .tooltiptext,
+#ModalContent .NewObjective label:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+#ModalContent .Add input,
+#ModalContent .Confirmation input,
+#ModalContent .NewMeta input,
+#ModalContent .NewObjective input {
+  width: -webkit-fill-available;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid rgba(138, 154, 154, 0.4);
+}
+
+#ModalContent .Add .amount label,
+#ModalContent .Confirmation .amount label,
+#ModalContent .NewMeta .amount label,
+#ModalContent .NewObjective .amount label {
+  font-size: 1.4em;
+  margin: 0;
+  font-family: roboto-black;
+  width: 10%;
+  float: left;
+}
+
+#ModalContent .Add .amount input,
+#ModalContent .Confirmation .amount input,
+#ModalContent .NewMeta .amount input,
+#ModalContent .NewObjective .amount input {
+  width: 88%;
+  float: right;
+}
+
+#ModalContent .Add .value,
+#ModalContent .Confirmation .value,
+#ModalContent .NewMeta .value,
+#ModalContent .NewObjective .value {
+  font-family: roboto-black;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+#ModalContent .Add button,
+#ModalContent .Confirmation button,
+#ModalContent .NewMeta button,
+#ModalContent .NewObjective button {
+  background-color: #86af49;
+  padding: 5px 15px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  margin-top: 34px;
+  width: 100%;
+}
+
+#ModalContent .Add button:nth-of-type(2),
+#ModalContent .Confirmation button:nth-of-type(2),
+#ModalContent .NewMeta button:nth-of-type(2),
+#ModalContent .NewObjective button:nth-of-type(2) {
+  margin-left: 10px;
+}
+
+#ModalContent .Add button:focus,
+#ModalContent .Confirmation button:focus,
+#ModalContent .NewMeta button:focus,
+#ModalContent .NewObjective button:focus {
+  outline: 0;
+}
+
+#ModalContent .Add button:hover,
+#ModalContent .Confirmation button:hover,
+#ModalContent .NewMeta button:hover,
+#ModalContent .NewObjective button:hover {
+  background-color: rgba(134, 175, 73, 0.8);
+}
+
+#ModalContent .Add .warning,
+#ModalContent .Confirmation .warning,
+#ModalContent .NewMeta .warning,
+#ModalContent .NewObjective .warning {
+  margin-top: 8px;
+  display: none;
+  font-size: 12px;
+  left: 165px;
+  width: auto;
+  text-align: right;
+  font-family: roboto-black;
+  color: red;
+  float: right;
+}
+
+@media screen and (max-width: 768px) {
+  #ModalContent .Add,
+  #ModalContent .Confirmation,
+  #ModalContent .NewMeta,
+  #ModalContent .NewObjective {
+    padding: 50px;
+  }
+}
+
+#ModalContent .Confirmation button {
+  background-color: #86af49;
+  padding: 5px 15px;
+  color: white;
+  border-radius: 0;
+  border: none;
+  margin: 0;
+  display: inline;
+  margin-top: 20px;
+  width: 49%;
+}
+
+#ModalContent .Confirmation button:nth-of-type(2) {
+  margin-left: 0;
+  background-color: red;
+}
+
+#ModalContent .NewObjective .tooltiptext {
+  font-family: roboto-regular;
+  visibility: hidden;
+  width: 230px;
+  background-color: #555;
+  color: #fff;
+  border-radius: 6px;
+  padding: 10px;
+  position: absolute;
+  left: 165px;
+  z-index: 1;
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  margin-top: 5px;
+  font-size: 14px;
+}
+
+#ModalContent .NewObjective .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  right: 50%;
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid #555;
+  border-right: 5px solid transparent;
+}
+
+#ModalContent .NewObjective .first::after,
+#ModalContent .NewObjective .second::after {
+  right: 50%;
+}
+
+#ModalContent .NewObjective .third::after {
+  right: 30%;
+}
+
+#ModalContent .NewObjective .fourth::after {
+  right: 75%;
+}
+
+#ModalContent .NewObjective .switch {
+  position: relative;
+  margin: 10px 0 0 0;
+  display: inline-block;
+  width: 60px;
+  float: right;
+}
+
+#ModalContent .NewObjective .switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+#ModalContent .NewObjective .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 34px;
+  height: 27px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#ModalContent .NewObjective .slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+#ModalContent .NewObjective input:checked + .slider {
+  background-color: #86af49;
+}
+
+#ModalContent .NewObjective input:focus + .slider {
+  -webkit-box-shadow: 0 0 1px #86af49;
+          box-shadow: 0 0 1px #86af49;
+}
+
+#ModalContent .NewObjective input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/*# sourceMappingURL=modal.css.map */

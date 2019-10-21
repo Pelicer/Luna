@@ -34,7 +34,7 @@
     text-align: center;
     z-index: 99;
   }
-  .error{
+  .error {
     background-color: red;
   }
   .warning {
@@ -129,6 +129,17 @@
       background-color: rgb(68, 136, 61) !important;
     }
   }
+  .pwd {
+    position: relative;
+    .fa-eye {
+      cursor: pointer;
+      position: absolute;
+      color: #000;
+      right: 20px;
+      top: 10px;
+    }
+  }
+
   .input-icon {
     width: 4%;
     padding: 10px 0;

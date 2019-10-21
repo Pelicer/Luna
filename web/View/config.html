@@ -18,8 +18,11 @@
         <!--Password elements-->
         <label for="password">Mudar de senha: </label>
         <p class="warning" id="PasswordWarning">Por favor, insira uma senha</p>
-        <img onClick="ShowPassword(this)" isvisible="False" class="input-icon" src="style/content/icon/view_on.png">
-        <input onkeyup="CheckPasswordStrenth(this)" name="password" id="password" type="password" class="form-control">
+        <div class=pwd>
+            <input onkeyup="CheckPasswordStrenth(this)" name="password" id="password" type="password" class="form-control">
+            <i onClick="ShowPassword(this)" class="fa fa-eye"></i>
+        </div>
+        
 
         <div id="password-info">
             <div id="strength"></div>

@@ -1,0 +1,291 @@
+@font-face {
+  font-family: roboto-regular;
+  src: url(../content/fonts/roboto/Roboto-Regular.ttf);
+}
+
+@font-face {
+  font-family: roboto-thin;
+  src: url(../content/fonts/roboto/Roboto-Thin.ttf);
+}
+
+@font-face {
+  font-family: roboto-black;
+  src: url(../content/fonts/roboto/Roboto-Black.ttf);
+}
+
+@font-face {
+  font-family: roboto-light;
+  src: url(../content/fonts/roboto/Roboto-Light.ttf);
+}
+
+@font-face {
+  font-family: roboto-bold;
+  src: url(../content/fonts/roboto/Roboto-Bold.ttf);
+}
+
+@font-face {
+  font-family: roboto-medium;
+  src: url(../content/fonts/roboto/Roboto-Medium.ttf);
+}
+
+.wrapper {
+  -ms-grid-rows: 1fr;
+      grid-template-rows: 1fr;
+  margin-bottom: 40px;
+}
+
+.wrapper .title {
+  display: inline;
+}
+
+.wrapper .title h2 {
+  display: inline;
+  color: #5f7278;
+  font-family: roboto-bold;
+}
+
+.wrapper .title button {
+  background-color: #86af49;
+  margin-left: 15px;
+  padding: 5px 15px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.wrapper .title button img {
+  width: 16px;
+  height: 16px;
+  margin-left: 5px;
+}
+
+.wrapper .title button:focus {
+  outline: 0;
+}
+
+.wrapper .title button:hover {
+  background-color: rgba(134, 175, 73, 0.8);
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper .title h2 {
+    display: block;
+  }
+  .wrapper .title button {
+    margin-left: 0;
+  }
+}
+
+.wrapper .divider {
+  width: 100%;
+  margin: 20px 0;
+  padding: 0;
+  background-color: #eeeeee;
+  width: 100%;
+  height: 1px;
+}
+
+.wrapper .taskbar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 150px 150px 1fr 1fr;
+      grid-template-columns: 150px 150px 1fr 1fr;
+  font-family: roboto-regular;
+}
+
+.wrapper .taskbar .search label,
+.wrapper .taskbar .status label {
+  font-family: roboto-bold;
+  margin-left: 30px;
+  width: 15%;
+  min-width: 120px;
+}
+
+.wrapper .taskbar .search input,
+.wrapper .taskbar .search select,
+.wrapper .taskbar .status input,
+.wrapper .taskbar .status select {
+  width: -webkit-fill-available;
+  margin-left: 30px;
+  border-radius: 5px;
+  padding: 5px;
+  border: 1px solid rgba(138, 154, 154, 0.4);
+}
+
+.wrapper .taskbar .search input:focus,
+.wrapper .taskbar .search select:focus,
+.wrapper .taskbar .status input:focus,
+.wrapper .taskbar .status select:focus {
+  outline: 0;
+}
+
+.wrapper .taskbar button {
+  background-color: #8a9a9a;
+  padding: 5px 15px;
+  color: white;
+  border-radius: 20px;
+  border: none;
+  margin-top: 34px;
+}
+
+.wrapper .taskbar button:nth-of-type(2) {
+  margin-left: 10px;
+}
+
+.wrapper .taskbar button:focus {
+  outline: 0;
+}
+
+.wrapper .taskbar button:hover {
+  background-color: #86af49;
+}
+
+.wrapper .taskbar .active {
+  background-color: #86af49;
+}
+
+@media screen and (max-width: 992px) {
+  .wrapper .taskbar {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .wrapper .taskbar .search {
+    padding: 15px 0;
+  }
+  .wrapper .taskbar button {
+    margin-top: 5px;
+    margin: 5px 0 !important;
+  }
+  .wrapper .taskbar label {
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  .wrapper .taskbar input,
+  .wrapper .taskbar select {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+  .wrapper .taskbar .info {
+    margin: 0;
+    padding: 15px 0px 0px 0px;
+    text-align: left;
+  }
+  .wrapper .taskbar .info label {
+    width: auto !important;
+  }
+}
+
+.wrapper .datatable {
+  margin-top: 25px;
+  overflow: auto;
+}
+
+.wrapper .datatable table {
+  width: 100%;
+  text-align: center;
+}
+
+.wrapper .datatable table tr {
+  padding: 20px;
+}
+
+.wrapper .datatable table tr:nth-of-type(even) {
+  background-color: rgba(95, 114, 120, 0.1);
+}
+
+.wrapper .datatable table tr:first-child:hover {
+  background-color: white;
+}
+
+.wrapper .datatable table tr:hover {
+  background-color: rgba(95, 114, 120, 0.2);
+}
+
+.wrapper .datatable table th {
+  font-family: roboto-bold;
+  color: #5f7278;
+  font-weight: bolder;
+  padding: 20px;
+  border-top: 1px solid rgba(95, 114, 120, 0.4);
+  border-bottom: 2px solid rgba(95, 114, 120, 0.4);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.wrapper .datatable table th:nth-of-type(1),
+.wrapper .datatable table td:nth-of-type(1) {
+  width: 5%;
+}
+
+.wrapper .datatable table th:nth-of-type(2),
+.wrapper .datatable table td:nth-of-type(2) {
+  width: 30%;
+}
+
+.wrapper .datatable table th:nth-of-type(3),
+.wrapper .datatable table td:nth-of-type(3) {
+  width: 10%;
+}
+
+.wrapper .datatable table th:nth-of-type(4),
+.wrapper .datatable table td:nth-of-type(4) {
+  width: 10%;
+}
+
+.wrapper .datatable table th:nth-of-type(5),
+.wrapper .datatable table td:nth-of-type(5) {
+  width: 15%;
+  min-width: 135px;
+}
+
+.wrapper .datatable table th:nth-of-type(6),
+.wrapper .datatable table td:nth-of-type(6) {
+  width: 10%;
+}
+
+.wrapper .datatable table th:nth-of-type(7),
+.wrapper .datatable table td:nth-of-type(7) {
+  width: 20%;
+}
+
+.wrapper .datatable table td {
+  padding: 20px;
+  font-family: roboto-regular;
+  color: rgba(95, 114, 120, 0.9);
+  border-bottom: 1px solid rgba(95, 114, 120, 0.2);
+}
+
+.wrapper .datatable table td div {
+  width: 15px;
+  height: 15px;
+  border-radius: 10px;
+  display: inline-block;
+  float: left;
+}
+
+.wrapper .datatable table td .late {
+  background-color: red;
+}
+
+.wrapper .datatable table td .ongoal {
+  background-color: #86af49;
+}
+
+.wrapper .datatable .info {
+  margin: 0 auto;
+  padding: 20px 0;
+  text-align: right;
+  font-family: roboto-black;
+}
+
+.wrapper .datatable .info * {
+  margin: 0;
+}
+
+.wrapper .datatable .info img {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+}
+/*# sourceMappingURL=metas.css.map */

@@ -185,7 +185,6 @@ function RenderGoals_Callback(xhr) {
         if (DSL.BoolValue == "true") {
             if (DSL.Value.indexOf("{") == -1) {
                 Goals = DSL.Value.toString();
-                RenderGoals(Goals);
             } else {
                 Goals = JSON.parse(DSL.Value);
                 RenderGoals(Goals.Goals);

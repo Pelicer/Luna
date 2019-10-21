@@ -151,13 +151,13 @@ function RenderGoals(Goals) {
         DeleteButton.src = "style/content/icon/garbage_black.png";
         DeleteButton.setAttribute("onmouseover", "ImageHover(this, 'garbage')");
         DeleteButton.setAttribute("onmouseout", "ImageUnhover(this, 'garbage')");
-        DeleteButton.setAttribute("onclick", "ShowModal('View/modal/Confirmation', " + Goal.ID + ")")
+        DeleteButton.setAttribute("onclick", "ShowModal('View/modal/Confirmation', " + Goal.ID + ", 'delete')")
 
         var AddButton = document.createElement("img");
         AddButton.src = "style/content/icon/plus_black.png";
         AddButton.setAttribute("onmouseover", "ImageHover(this, 'plus')");
         AddButton.setAttribute("onmouseout", "ImageUnhover(this, 'plus')");
-        AddButton.setAttribute("onclick", "ShowModal('View/modal/AddAmount', " + Goal.ID + ")")
+        AddButton.setAttribute("onclick", "ShowModal('View/modal/AddAmount', " + Goal.ID + ", 'add')")
 
         var Info = document.createElement("div");
         Info.setAttribute("onClick", "ShowModal('View/modal/GoalDetailsModal', " + Goal.ID + ")");
@@ -231,6 +231,7 @@ function RenderGoals(Goals) {
         InfoData.appendChild(NoObjectives);
         InfoData.setAttribute("onClick", "Activate(document.getElementById('metas'))")
     }
+    Highcharts.charts.forEach(chart => chart.reflow());
 };
 
 function RenderGraph(Goal) {

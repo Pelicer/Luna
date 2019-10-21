@@ -1,0 +1,153 @@
+<link rel="stylesheet" type="text/css" href="style/css/dashboard.css">
+
+<div class="container-fluid wrapper">
+    <div class="row">
+        <div class="col-lg-12 title">
+            <h2>Objetivo Principal</h2>
+        </div>
+        <div class="col-xs-6 col-lg-6 col-md-12">
+            <div id="maingoal"></div>
+        </div>
+        <div class="col-xs-6 col-lg-6 col-md-12">
+            <div class="mainsummary">
+                <h3>Data Final: <span>2025</span></h3>
+                <div class="achieved">
+                    <p>
+                        <img src="style/content/icon/piggy.png">R$ 192.000</p>
+                    <p id="description">Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem
+                        impsum Lorem impsum</p>
+                </div>
+                <div class="remaining">
+                    <p>
+                        <img src="style/content/icon/remaining.png">R$ 108.000</p>
+                    <p id="description">Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem impsum Lorem
+                        impsum Lorem impsum</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 divider">
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 metas">
+            <h3>Metas</h3>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 meta">
+                    <img class="add" src="style/content/icon/plus_black.png" onmouseover="ImageHover(this, 'plus');"
+                        onmouseout="ImageUnhover(this, 'plus')" onClick="ShowModal('View/modal/AddAmount')">
+                    <img class="add" src="style/content/icon/garbage_black.png"
+                        onmouseover="ImageHover(this, 'garbage');" onmouseout="ImageUnhover(this, 'garbage')"
+                        onClick="ShowModal('View/modal/Confirmation')">
+                    <div onClick="ShowModal('View/modal/GoalDetailsModal')" class="holder">
+                        <p>Farmácia</p>
+                        <div id="farmacia" class="graph"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 meta">
+                    <img class="add" src="style/content/icon/plus_black.png" onmouseover="ImageHover(this, 'plus');"
+                        onmouseout="ImageUnhover(this, 'plus')" onClick="ShowModal('View/modal/AddAmount')">
+                    <img class="add" src="style/content/icon/garbage_black.png"
+                        onmouseover="ImageHover(this, 'garbage');" onmouseout="ImageUnhover(this, 'garbage')"
+                        onClick="ShowModal('View/modal/Confirmation')">
+                    <div onClick="ShowModal('View/modal/GoalDetailsModal')" class="holder">
+                        <p>Transporte</p>
+                        <div id="transporte" class="graph"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 meta">
+                    <img class="add" src="style/content/icon/plus_black.png" onmouseover="ImageHover(this, 'plus');"
+                        onmouseout="ImageUnhover(this, 'plus')" onClick="ShowModal('View/modal/AddAmount')">
+                    <img class="add" src="style/content/icon/garbage_black.png"
+                        onmouseover="ImageHover(this, 'garbage');" onmouseout="ImageUnhover(this, 'garbage')"
+                        onClick="ShowModal('View/modal/Confirmation')">
+                    <div onClick="ShowModal('View/modal/GoalDetailsModal')" class="holder">
+                        <p>Comida</p>
+                        <div id="comida" class="graph"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 meta">
+                    <img class="add" src="style/content/icon/plus_black.png" onmouseover="ImageHover(this, 'plus');"
+                        onmouseout="ImageUnhover(this, 'plus')" onClick="ShowModal('View/modal/AddAmount')">
+                    <img class="add" src="style/content/icon/garbage_black.png"
+                        onmouseover="ImageHover(this, 'garbage');" onmouseout="ImageUnhover(this, 'garbage')"
+                        onClick="ShowModal('View/modal/Confirmation')">
+                    <div onClick="ShowModal('View/modal/GoalDetailsModal')" class="holder">
+                        <p>Lazer</p>
+                        <div id="lazer" class="graph"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 divider">
+            <hr />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-12 metas">
+            <h3>Objetivos</h3>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
+                    <img class="add" src="style/content/icon/plus_black.png" onmouseover="ImageHover(this, 'plus');"
+                        onmouseout="ImageUnhover(this, 'plus')" onClick="ShowModal('View/modal/AddAmount')">
+                    <img class="add" src="style/content/icon/garbage_black.png"
+                        onmouseover="ImageHover(this, 'garbage');" onmouseout="ImageUnhover(this, 'garbage')"
+                        onClick="ShowModal('View/modal/Confirmation')">
+                    <div onClick="ShowModal('View/modal/GoalDetailsModal')" class="holder">
+                        <span>2019</span>
+                        <p>Notebook</p>
+                        <p>Faltam apenas R$500,00 para chegar lá!</p>
+                        <div id="notebook" class="objective"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
+                    <img class="add" src="style/content/icon/plus_black.png" onmouseover="ImageHover(this, 'plus');"
+                        onmouseout="ImageUnhover(this, 'plus')" onClick="ShowModal('View/modal/AddAmount')">
+                    <img class="add" src="style/content/icon/garbage_black.png"
+                        onmouseover="ImageHover(this, 'garbage');" onmouseout="ImageUnhover(this, 'garbage')"
+                        onClick="ShowModal('View/modal/Confirmation')">
+                    <div onClick="ShowModal('View/modal/GoalDetailsModal')" class="holder">
+                        <span>2020</span>
+                        <p>Viagem - RJ</p>
+                        <p>Faltam apenas R$500,00 para chegar lá!</p>
+                        <div id="viagemrj" class="objective"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
+                    <img class="add" src="style/content/icon/plus_black.png" onmouseover="ImageHover(this, 'plus');"
+                        onmouseout="ImageUnhover(this, 'plus')" onClick="ShowModal('View/modal/AddAmount')">
+                    <img class="add" src="style/content/icon/garbage_black.png"
+                        onmouseover="ImageHover(this, 'garbage');" onmouseout="ImageUnhover(this, 'garbage')"
+                        onClick="ShowModal('View/modal/Confirmation')">
+                    <div onClick="ShowModal('View/modal/GoalDetailsModal')" class="holder">
+                        <span>2022</span>
+                        <p>Carro Novo</p>
+                        <p>Faltam apenas R$500,00 para chegar lá!</p>
+                        <div id="carronovo" class="objective"></div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 col-sm-12 objetivo">
+                    <img class="add" src="style/content/icon/plus_black.png" onmouseover="ImageHover(this, 'plus');"
+                        onmouseout="ImageUnhover(this, 'plus')" onClick="ShowModal('View/modal/AddAmount')">
+                    <img class="add" src="style/content/icon/garbage_black.png"
+                        onmouseover="ImageHover(this, 'garbage');" onmouseout="ImageUnhover(this, 'garbage')"
+                        onClick="ShowModal('View/modal/Confirmation')">
+                    <div onClick="ShowModal('View/modal/GoalDetailsModal')" class="holder">
+                        <span>2022</span>
+                        <p>Casamento</p>
+                        <p>Faltam apenas R$500,00 para chegar lá!</p>
+                        <div id="casamento" class="objective"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -5,6 +5,7 @@
     <!-- <meta name="google-signin-client_id"
         content="Y606001564194-gpmhtckgq0v9mg52vlivcn3sae3hbo0f.apps.googleusercontent.com"> -->
     <title>Luna</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="../style/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../style/css/landing.css">
 </head>
@@ -60,9 +61,10 @@
                     <label for="password">Senha: </label>
                     <p class="warning" id="PasswordWarning">Por favor, insira sua senha</p>
                     <br>
-                    <img onClick="ShowPassword(this)" isvisible="False" class="input-icon"
-                        src="../style/content/icon/view_on.png">
-                    <input name="password" id="password" type="password" class="form-control">
+                    <div class=pwd>
+                        <input name="password" id="password" type="password" class="form-control"></input>
+                        <i onClick="ShowPassword(this)" class="fa fa-eye"></i>
+                    </div>
                 </div>
 
                 <button onClick="Login()" id="login-btn" class="btn btn-primary">Login</button>

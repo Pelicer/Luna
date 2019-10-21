@@ -21,17 +21,68 @@ function ShowModal(Page, GoalID, Operation) {
                     }
                 }
                 switch (Page) {
-                    case "View/modal/NewMeta", "View/modal/NewObjective":
+                    case "View/modal/NewMeta":
+                    case "View/modal/NewObjective":
+                        if (Operation === "edit") {
+                            var Goal = GetGoalByID(GoalID);
+                            if (Page.indexOf('NewMeta') !== -1) {
+                                var Title = document.getElementById("Title");
+                                Title.value = Goal.Title;
+                                var Amount = document.getElementById("CategoryAmount");
+                                Amount.value = Goal.FinalValue;
+                                var Register = document.getElementById("Register");
+                                Register.innerText = "Editar";
+                                var Categories = document.getElementById("Categories");
+                                var opt = document.createElement("option");
+                                opt.value = Goal.Category;
+                                opt.innerText = Goal.Category;
+                                Categories.appendChild(opt);
+                                Categories.value = Goal.Category;
+                            } else {
+                                var Name = document.getElementById("Name");
+                                Name.value = Goal.Title;
+                                var Amount = document.getElementById("ObjectiveAmount");
+                                Amount.value = Goal.FinalValue;
+
+                                var FinalDate = document.getElementById("LimitDate");
+                                FinalDateText = Goal.FinalDate.replace(/([0-9]{2}\:){1,}[0-9]{2}$/, "");
+                                FinalDateText = FinalDateText.replace(/\//g, "-");
+                                FinalDateText = FinalDateText.split("-").reverse().join("-");
+                                FinalDate.value = FinalDateText.trim().replace(/\s/g, "");
+
+                                var Categories = document.getElementById("Categories");
+                                var opt = document.createElement("option");
+                                opt.value = Goal.Category;
+                                opt.innerText = Goal.Category;
+                                Categories.appendChild(opt);
+                                Categories.value = Goal.Category;
+
+                                var IsMain = document.getElementById("isMain");
+                                if(Goal.GoalMain == true){
+                                    IsMain.checked = true;
+                                }else{
+                                    IsMain.checked = false;
+                                }
+
+                                var Register = document.getElementById("Register");
+                                Register.innerText = "Editar";
+
+                            }
+                        }
                         GetCategories_Request(modal.getElementsByTagName("select")[0]);
                         break;
-                    case "View/modal/Confirmation", "View/modal/AddAmount":
+                    case "View/modal/Confirmation":
+                    case "View/modal/AddAmount":
                         modal.setAttribute("GoalID", GoalID);
                         modal.setAttribute("Operation", Operation)
+                        break;
                     case "View/modal/GoalDetailsModal":
 
                         var Goal = GetGoalByID(GoalID);
                         modal.setAttribute("GoalID", GoalID);
 
+                        var Title = document.getElementById("title");
+                        Title.innerText = Goal.Title;
                         var FinalQty = document.getElementById("goaltotal");
                         FinalQty.innerText = "R$ " + Goal.FinalValue;
                         var Saved = document.getElementById("goalsaved");
@@ -51,9 +102,7 @@ function ShowModal(Page, GoalID, Operation) {
                             p.appendChild(Timestamp);
                             History.appendChild(p);
                         }
-
                         RenderMainGoal(GoalID, 'progresschart');
-
                 }
             }
         }
@@ -191,7 +240,7 @@ function TakeAction(modal) {
         case "delete":
             DeleteGoal_Request(GoalID);
             break;
-        case "ADD":
+        case "add":
             if (ValidateModalFields('add')) {
                 var Amount = document.getElementById("Amount");
                 RegisterTransaction_Request(GoalID, 'ADD', Amount.value);
